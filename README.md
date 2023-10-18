@@ -1,3 +1,2 @@
 # TareaJava
-FA
-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
+Repository of the conditional work Java exercises, you're welcome Arthur 😛
