@@ -1,5 +1,3 @@
-/*  Escriu un programa que llig dos números, calcula i mostra el valor de la seua suma, resta,producte i divisió. (Tingues en compte la divisió per zero). */
-
 import java.util.Scanner;
 
 public class Main {
@@ -33,14 +31,9 @@ public class Main {
                   System.out.println("Muy bien, el resultado de la suma es " + resSum + ", el resultado de la resta es " + resRes + ", el resultado de la multiplicación es " + resMul + ", el resultado de la división es " + resDiv + ", y su producto es " + resProd );
               }
 
-
-
-
-
-
     }
 }
 
 // Hecho por Jose Alba Arrufat
 
-
+/*  Escriu un programa que llig dos números, calcula i mostra el valor de la seua suma, resta,producte i divisió. (Tingues en compte la divisió per zero). */

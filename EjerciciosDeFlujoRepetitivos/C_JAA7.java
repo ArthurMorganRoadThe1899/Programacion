@@ -1,5 +1,3 @@
-/* Escriu un programa que llig dos números i ens diu quin és el major o si són iguals. */
-
 import java.util.Scanner;
 
 public class Main {
@@ -26,3 +24,5 @@ public class Main {
 }
 
 // Hecho por Jose Alba Arrufat
+
+/* Escriu un programa que llig dos números i ens diu quin és el major o si són iguals. */

@@ -1,5 +1,3 @@
-/* Escriu un programa que llig un número i em diu si és positiu o negatiu, considerarem el zero com a positiu. */
-
 import java.util.Scanner;
 
 public class Main {
@@ -21,3 +19,5 @@ public class Main {
 }
 
 // Hecho por Jose Alba Arrufat
+
+/* Escriu un programa que llig un número i em diu si és positiu o negatiu, considerarem el zero com a positiu. */

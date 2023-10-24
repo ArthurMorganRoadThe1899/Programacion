@@ -1,5 +1,3 @@
-/* Escriu un programa que llegisca tres números diferents i ens diga quin és el major. */
-
 import java.util.Scanner;
 
 public class Main {
@@ -31,3 +29,5 @@ public class Main {
 }
 
 // Hecho por Jose Alba Arrufat
+
+/* Escriu un programa que llegisca tres números diferents i ens diga quin és el major. */

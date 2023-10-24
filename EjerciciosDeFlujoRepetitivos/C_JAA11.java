@@ -1,7 +1,3 @@
-/* Escriu un programa que calcula el salari net setmanal d'un treballador en funció del nombre d'hores treballades i la taxa d'impostos d'acord amb les següents hipòtesis:
-• Les primeres 35 hores es paguen a tarifa normal.
-• Les hores que passen de 35 es paguen a 1,5 vegades la tarifa normal. */
-
 import java.util.Scanner;
 
 public class Main {
@@ -32,3 +28,7 @@ public class Main {
 
 
 // Hecho por Jose Alba Arrufat
+
+/* Escriu un programa que calcula el salari net setmanal d'un treballador en funció del nombre d'hores treballades i la taxa d'impostos d'acord amb les següents hipòtesis:
+• Les primeres 35 hores es paguen a tarifa normal.
+• Les hores que passen de 35 es paguen a 1,5 vegades la tarifa normal. */

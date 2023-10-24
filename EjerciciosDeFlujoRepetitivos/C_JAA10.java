@@ -1,5 +1,3 @@
-/* Escriu un programa que rep com a dades d'entrada una hora expressada en hores, minuts i segons que ens calcula i escriu l'hora, minuts i segons que seran, transcorregut un segon. */
-
 import java.util.Scanner;
 
 public class Main {
@@ -24,3 +22,4 @@ public class Main {
 
 // Hecho por Jose Alba Arrufat
 
+/* Escriu un programa que rep com a dades d'entrada una hora expressada en hores, minuts i segons que ens calcula i escriu l'hora, minuts i segons que seran, transcorregut un segon. */

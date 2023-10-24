@@ -1,10 +1,3 @@
-/* Escriu un programa que llegisca una qualificació numèrica entre 0 i 10 i la transforma en qualificació alfabètica, escrivint el resultat.
-• de 0 a <3 Molt Deficient.
-• de 3 a <5 Insuficient.
-• de 5 a <6 Bé.
-• de 6 a <9 Notable
-• de 9 a 10 Excel·lent */
-
 import java.util.Scanner;
 
 public class Main {
@@ -37,3 +30,10 @@ public class Main {
 }
 
 // Hecho por Jose Alba Arrufat
+
+/* Escriu un programa que llegisca una qualificació numèrica entre 0 i 10 i la transforma en qualificació alfabètica, escrivint el resultat.
+• de 0 a <3 Molt Deficient.
+• de 3 a <5 Insuficient.
+• de 5 a <6 Bé.
+• de 6 a <9 Notable
+• de 9 a 10 Excel·lent */

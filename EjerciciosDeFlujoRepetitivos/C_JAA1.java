@@ -1,6 +1,3 @@
-/* Escriu un programa que demana l'edat per teclat i ens mostra el missatge de “Eres major d'edat” només si ho som.
-*/
-
 import java.util.Scanner;
 
 public class Main {
@@ -18,3 +15,6 @@ public class Main {
 }
 
 // Hecho por Jose Alba Arrufat
+
+/* Escriu un programa que demana l'edat per teclat i ens mostra el missatge de “Eres major d'edat” només si ho som.
+*/

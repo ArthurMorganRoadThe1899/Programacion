@@ -1,5 +1,3 @@
-/* Escriu un programa que demana l'edat per teclat i ens mostra el missatge de “eres major d'edat” o el missatge de “eres menor d'edat”. */
-
 import java.util.Scanner;
 
 public class Main {
@@ -12,11 +10,10 @@ public class Main {
 
               if(edad >= 18 ){
                   System.out.println("Eres mayor de edad");
-        }else {
-                  System.out.println("Eres menor de edad");
-              }
+        }
     }
 }
 
 // Hecho por Jose Alba Arrufat
 
+/* Escriu un programa que demana l'edat per teclat i ens mostra el missatge de “eres major d'edat” o el missatge de “eres menor d'edat”. */

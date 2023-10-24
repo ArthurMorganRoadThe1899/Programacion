@@ -1,6 +1,4 @@
- /* Escriu un programa que llig 2 números i mostra el major. */
- 
- import java.util.Scanner;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,3 +22,5 @@ public class Main {
 }
 
 // Hecho por Jose Alba Arrufat
+
+ /* Escriu un programa que llig 2 números i mostra el major. */
