@@ -5,13 +5,13 @@ public class B_JAA13 {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         Random rn = new Random();
-        int nRandom = rn.nextInt(100) + 1;
         int num = 0;
         String respuesta;
 
         System.out.println("Hola mijo, preparate, porque soy muy listo y te voy a adivinar el un número del 1 al 100, allá vamos");
         System.out.println("");
         do {
+            int nRandom = rn.nextInt(100) + 1;
             System.out.println("Tu número es " + nRandom + "? en cuyo caso escribe 'si', si no, di 'no'");
 
             respuesta = in.nextLine();
@@ -28,8 +28,7 @@ public class B_JAA13 {
             respuesta = in.nextLine();
 
         }while (respuesta.equals("si"));
-
-
-
     }
 }
+
+
