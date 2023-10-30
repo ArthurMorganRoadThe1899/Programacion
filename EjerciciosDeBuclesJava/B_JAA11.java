@@ -9,7 +9,9 @@ public class B_JAA11 {
                 impar = num + impar;
             }num++;
         }
+        System.out.println("");
         System.out.println("El resultado de los impares es " + impar + " y el de los pares " + par);
 
     }
 }
+
