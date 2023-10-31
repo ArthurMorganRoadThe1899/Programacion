@@ -13,7 +13,7 @@ public class B_JAA14 {
             System.out.println("Nu, multiplos de 5 abuelo");
         }while (true){
             if (fajo_e_dinero >= 500){
-                fajo_e_dinero -= 500;
+                fajo_e_dinero -= 500; // Esta parte de aquí se ejecuta en todos los if, esto equivale a "fajo = fajo - cifra de dinero. Esto se hace porque le restamos eso, Esto hace que hagamos una suma más acertada de los billetes que tenemos (rollo, decimos que tenemos 520 billetes, hace la resta, fajo se convierte en 20, y el programa también suma 1 de billetes de 20, es reducción de errores)"//
                 billete500++;
             }else if (fajo_e_dinero >= 200) {
                 fajo_e_dinero -= 200;
