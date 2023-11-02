@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class B_JAA15 {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
-        int mul = 3, type = 0, contador = 0;
+        int type = 0, contador = 0;
 
         System.out.println("Dime un multiplo de 3 y te digo cuantos lleva");
         type = in.nextInt();
