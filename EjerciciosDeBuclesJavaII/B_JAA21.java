@@ -16,11 +16,11 @@ public class B_JAA21 {
             System.out.println("");
             System.out.println("Ñaca, te dije que fuese mayor que el anterior");
         }else{
-            while (num2 > num){
+            while (num2 > num && % 2 == 0){
                 num++;
                 System.out.print(num + " ");
             }
-            int total = num + num2;
+
         }
     }
 }
