@@ -1,6 +1,8 @@
+package TareaJava.EjerciciosDeFlujoRepetitivos;
+
 import java.util.Scanner;
 
-public class Main {
+public class C_JAA1 {
     public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
             int edad = 0;

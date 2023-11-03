@@ -1,6 +1,8 @@
+package TareaJava.EjerciciosDeBuclesJava;
+
 import java.util.Scanner;
 
-public class B_JAA11 {
+public class B_JAA12 {
     public static void main(String[] args){
         int A = 0, B = 0, resultado = 1;
         Scanner in = new Scanner(System.in);

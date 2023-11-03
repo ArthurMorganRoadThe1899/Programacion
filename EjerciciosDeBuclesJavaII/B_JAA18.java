@@ -1,3 +1,5 @@
+package TareaJava.EjerciciosDeBuclesJavaII;
+
 public class B_JAA18 {
     public static void main(String[] args){
         int a, b, c, d, e;

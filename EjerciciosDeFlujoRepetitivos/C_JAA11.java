@@ -1,6 +1,8 @@
+package TareaJava.EjerciciosDeFlujoRepetitivos;
+
 import java.util.Scanner;
 
-public class Main {
+public class C_JAA11 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         long hrs = 0, salarioN = 0, salarioB = 1200, tarifa = 25, impuestosGenerales = 345;

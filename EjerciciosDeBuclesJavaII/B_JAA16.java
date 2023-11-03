@@ -1,20 +1,26 @@
+package TareaJava.EjerciciosDeBuclesJavaII;
 import java.util.Scanner;
 
 public class B_JAA16 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int num = 0;
         String res;
+        boolean primo = true;
 
-        System.out.println("Dame un numerin amigo mio, te diré si es primo o negativo [SOLO ADMITO NÚMEROS IGUAL O MAYORES A 0]");
+        System.out.println("Dame un numerin amigo mio, te diré si es primo o no");
         num = in.nextInt();
 
-            if (num < 0) {
-                System.out.println("SOLO POSITIVOS");
-            } else if (num % 2 == 0) {
-                System.out.println("El número es par");
-            } else {
-                System.out.println("El número es impar");
+        for(int conclus = 2; conclus < num; conclus++) {
+            if (num % conclus == 0) {
+                primo = false;
+                break;
             }
         }
+        if (primo)
+            System.out.println("El número es primo mi loco");
+        else
+            System.out.println("Nop, el número no es primo man");
+    }
+
     }

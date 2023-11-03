@@ -1,3 +1,5 @@
+package TareaJava.EjerciciosDeBuclesJava;
+
 public class B_JAA11 {
     public static void main(String[] args){
         int num = 0, par = 0, impar = 0;

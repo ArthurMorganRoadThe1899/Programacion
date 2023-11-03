@@ -1,3 +1,4 @@
+package TareaJava.EjerciciosDeBuclesJavaII;
 import java.util.Scanner;
 
 public class B_JAA17 {

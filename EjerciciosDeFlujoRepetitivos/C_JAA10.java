@@ -1,6 +1,8 @@
+package TareaJava.EjerciciosDeFlujoRepetitivos;
+
 import java.util.Scanner;
 
-public class Main {
+public class C_JAA10 {
     public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
             long secs = 0, secsTrue = 0, min = 0, hrs = 0;
