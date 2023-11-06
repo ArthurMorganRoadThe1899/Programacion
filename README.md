@@ -1,5 +1,4 @@
 # Tareas Java 
-## LAST UPDATE - [24/10/2023]
 
 <p> Muy buenas, bienvenidos a mi repositorio de la tareas de Java </p>
 
