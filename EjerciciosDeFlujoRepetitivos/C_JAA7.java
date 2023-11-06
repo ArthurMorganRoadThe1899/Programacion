@@ -1,4 +1,4 @@
-package TareaJava.EjerciciosDeFlujoRepetitivos;
+package Programacion.EjerciciosDeFlujoRepetitivos;
 
 import java.util.Scanner;
 

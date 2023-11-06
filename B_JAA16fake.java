@@ -1,4 +1,4 @@
-package TareaJava;
+package Programacion;
 import java.util.Scanner;
 
 public class B_JAA16fake {

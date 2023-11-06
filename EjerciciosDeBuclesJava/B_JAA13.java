@@ -1,4 +1,4 @@
-package TareaJava.EjerciciosDeBuclesJava;
+package Programacion.EjerciciosDeBuclesJava;
 
 import java.util.Random;
 import java.util.Scanner;

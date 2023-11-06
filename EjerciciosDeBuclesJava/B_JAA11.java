@@ -1,4 +1,4 @@
-package TareaJava.EjerciciosDeBuclesJava;
+package Programacion.EjerciciosDeBuclesJava;
 
 public class B_JAA11 {
     public static void main(String[] args){
