@@ -137,7 +137,7 @@ public class D_JAA2 {
                 }
             }
             System.out.println();
-            System.out.println("Quieres repetir? Si es así escribe s");
+            System.out.println("Quieres repetir? Si es así escribe 's'");
             respuesta = in.nextLine();
         }while (respuesta.equals("s"));
     }
