@@ -12,7 +12,7 @@ public class D_JAA3 {
 
         for (contador = 0; contador < 50; contador++) {
             Random rn = new Random();
-            rNum = rn.nextInt(199) + 100;
+            rNum = rn.nextInt(100) + 100;
             System.out.print(rNum + " ");
             nums.add(rNum);
         }
@@ -30,10 +30,12 @@ public class D_JAA3 {
                 min = nums.get(checkDiscard);
             }
         }
-        int mid = max;
+        int mid = 0;
         for (int checkDiscard = 0; checkDiscard < nums.size(); checkDiscard++) {
-
+            mid = mid + nums.get(checkDiscard);
         }
+        mid = mid / nums.size();
+
         System.out.println();
         System.out.println("Mínimo: " + min);
         System.out.println("Media: " + mid);
