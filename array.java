@@ -1,9 +1,15 @@
 package Programacion;
-
+import java.util.Arrays;
 
 public class array {
     public static void main(String[] args) {
+        int array1[] = {4, 5, 7, 1, 6, 7};
+        int array2[] = {3, 6, 6, 2, 4, 9, 9};
+        int array3[];
 
+        for (int contador = 0; contador < array2.length; contador++){
+            array3[] = Arrays.stream(array2).toArray();
+        }
     }
 }
 
