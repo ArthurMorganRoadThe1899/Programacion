@@ -10,7 +10,7 @@ public class array {
         ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(3,6,6,2,4,9,9));
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList());
 
-        for (int checkDiscard = 0; checkDiscard < array2.size(); checkDiscard++) {
+        /* for (int checkDiscard = 0; checkDiscard < array2.size(); checkDiscard++) {
             if (array2.get(checkDiscard) > array3.get(checkDiscard)) {
                 array3.get(checkDiscard) = array2.get(checkDiscard);
 
@@ -21,7 +21,7 @@ public class array {
 
             }
             System.out.println(array3);
-        }
+        }*/
 
     }
 }
