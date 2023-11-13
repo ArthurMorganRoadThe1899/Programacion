@@ -22,5 +22,3 @@ public class array {
 
     }
 }
-
-// https://stackoverflow.com/questions/4763974/directly-setting-values-for-an-arraylist-in-java
