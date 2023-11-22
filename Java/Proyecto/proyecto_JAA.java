@@ -17,31 +17,27 @@ public class proyecto_JAA {
         String eR = in.nextLine();
 
         int b1 = 0;
-        int S1 = (int) (Math.random() * 10 + 1);
-        int S2 = (int) (Math.random() * 30 + 20);
+        int S1 = (int) (Math.random() * (10 + 1));
+        int S2 = (int) (Math.random() * (30 + 20));
+        int total = 0;
+        int r1 = 0;
 
-        System.out.println("Los problemas empiezan cuando deben realizar un salto hiperespacial hasta al\n" +
-                "sistema S1 en el sector S2, pero el sistema de navegación está estropeado y el\n" +
-                "computador tiene problemas para calcular parte de las coordenadas de salto.\n" +
-                "Chewbacca, piloto experto, se da cuenta que falta el cuarto número de la serie.\n" +
-                "Recuerda de sus tiempos en la academia de pilotos que para calcularlo hay que\n" +
-                "calcular el sumatorio entre el nº del sistema y el nº del sector (ambos inclusive).\n" +
-                "¿Qué debe introducir?");
-
-        // Apartir de aquí pruebas mías
-        System.out.println(S1);
-        System.out.println(S2);
-
-        int[] arrSum = new int[465]; // El sumatorio máximo entre 1 y 30 es 465
-        for (int i = S1, b = 0; i <= S2 && b < S2; i++, b++) {
-            arrSum[b] = i;
-        }
-        /*for(int i = 0; i < arrSum.length; i++){ //Sumatorio, revisar
-            int resultadoSum += arrSum[i];
-        }
-        System.out.println(arrSum[2]);*/
+            System.out.println("Los problemas empiezan cuando deben realizar un salto hiperespacial hasta al\n" +
+                    "sistema " + S1 + " en el sector "+ S2 + ", pero el sistema de navegación está estropeado y el\n" +
+                    "computador tiene problemas para calcular parte de las coordenadas de salto.\n" +
+                    "Chewbacca, piloto experto, se da cuenta que falta el cuarto número de la serie.\n" +
+                    "Recuerda de sus tiempos en la academia de pilotos que para calcularlo hay que\n" +
+                    "calcular el sumatorio entre el nº del sistema y el nº del sector (ambos inclusive).\n" +
+                    "¿Qué debe introducir?");
 
 
+            for (int i = S1; i <= S2; i++) {
+                total += i; // La respuesta es esta variable
+            }
+        do {
+            System.out.println(total);
+            r1 = in.nextInt();
+        }while(r1 != total);
 
     }
 }
