@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class proyecto_JAA {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String eR;
 
         System.out.println();
         System.out.println("=== STAR WARS CÓDIGOS SECRETOS ===\n" +
@@ -15,7 +14,7 @@ public class proyecto_JAA {
 
         System.out.println();
         System.out.println("PRESIONA ENTER PARA CONTINUAR...");
-        eR = in.nextLine();
+        String eR = in.nextLine();
 
         int b1 = 0;
         int S1 = (int) (Math.random() * 10 + 1);
@@ -29,6 +28,7 @@ public class proyecto_JAA {
                 "calcular el sumatorio entre el nº del sistema y el nº del sector (ambos inclusive).\n" +
                 "¿Qué debe introducir?");
 
+        // Apartir de aquí pruebas mías
         System.out.println(S1);
         System.out.println(S2);
 
@@ -36,10 +36,10 @@ public class proyecto_JAA {
         for (int i = S1, b = 0; i <= S2 && b < S2; i++, b++) {
             arrSum[b] = i;
         }
-        for(int i = 0; i < arrSum.length; i++){ //Sumatorio, revisar
+        /*for(int i = 0; i < arrSum.length; i++){ //Sumatorio, revisar
             int resultadoSum += arrSum[i];
         }
-        System.out.println(arrSum[2]);
+        System.out.println(arrSum[2]);*/
 
 
 
