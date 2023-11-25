@@ -77,7 +77,7 @@ public class proyecto_JAA {
                                 "(redondeando N hacia abajo), donde N es el nº de niveles”.\n" +
                                 "¿Cual es el nivel correcto?");
                         for(int i = 1; i <= N; i++){
-                            N *= i;
+                            N *= i; // Mirar si esta bien
                         }
                         total3 = N;
                         System.out.println(total3); // Esto se utiliza en debug para trampear el lvl
