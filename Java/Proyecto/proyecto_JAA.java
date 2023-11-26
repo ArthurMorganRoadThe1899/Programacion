@@ -41,7 +41,7 @@ public class proyecto_JAA {
         // NIVEL 2
             if(r1 == total){
                 int P1 = (int) (Math.random() * (7 + 1));
-                int P2 = (int) (Math.random() * ((30 - 20) + 1) + 20);
+                int P2 = (int) (Math.random() * ((12 - 8) + 1) + 8);
                 int total2 = 1, r2 = 0;
                 System.out.println();
                 System.out.println("Gracias a Chewbacca consiguen llegar al sistema correcto y ven a lo lejos la estrella\n" +
