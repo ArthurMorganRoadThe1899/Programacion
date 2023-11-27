@@ -131,14 +131,16 @@ public class strings {
         System.out.println();
         System.out.println("También hay una versión de estos métodos que se puede usar para contar las mayúsculas o minúsculas");
 
+        // Comparador de mayúsculas
+        int stopTHECOUNT = 0;
         for(int i = 0; i < pollo.length(); i++){
             char culo = pollo.charAt(i);
-            int stopTHECOUNT = 0;
-            while(culo.isLowerCase()){
 
+            if(Character.isUpperCase(culo)){
+                stopTHECOUNT = stopTHECOUNT + 1;
             }
         }
-
+        System.out.println(stopTHECOUNT);
 
 
 
@@ -156,7 +158,7 @@ public class strings {
         lastIndexOf - https://www.w3schools.com/java/ref_string_lastindexof.asp
         startsWith(cadena) - https://www.w3schools.com/java/ref_string_startswith.asp
         replace(cadena1, cadena2) - https://www.w3schools.com/java/ref_string_replace.asp
-        toUpperCase && toLowerCase - https://www.w3schools.com/java/ref_string_touppercase.asp
+        toUpperCase && toLowerCase - https://www.w3schools.com/java/ref_string_touppercase.asp, https://www.tutorialspoint.com/java/character_islowercase.htm
 
          */
 
