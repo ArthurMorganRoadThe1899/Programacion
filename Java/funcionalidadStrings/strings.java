@@ -69,6 +69,77 @@ public class strings {
         System.out.println("Si corto a partir de la línea 11 y luego, corto como máximo hasta la línea 14, obtenemos:");
         System.out.println(palabro.substring(11,14));
 
+        // 7. indexOf(cadena)
+        System.out.println();
+        System.out.println("indexOf: método que te devuelve en que momento sale una palabra por primera vez basado en carácteres");
+
+        String babp = "Hello Mr Bean, you a live in a great planet like babu.";
+        System.out.println();
+        System.out.println("Utilizaremos la palabra:");
+        System.out.println(" '" + babp + "' ");
+        System.out.println("La palabra que a partir del carácter número " + babp.indexOf("Mr") + " es " + babp.substring(6,8));
+        System.out.println("La palabra que a partir del carácter número " + babp.indexOf("babu") + " es " + babp.substring(49,53));
+
+        System.out.println();
+        System.out.println("Este método diferencia entre mayusculas de mínusculas, no es lo mismo babu que BABU o Babu.");
+        System.out.println("Al intentar imprimir algo que no existe en pantalla te dará siempre -1");
+        System.out.println("Babu en este String es " + babp.indexOf("Babu"));
+
+        // 8. lastIndexOf(cadena)
+        System.out.println();
+        System.out.println("lastIndexOf: este método funciona exactamente igual al anterior, pero lo enfoca al revés, es decir, busca cuando fue la última vez que sale una palabra en el String basandose en los carácteres");
+
+        String yo = "yo mr jonsey, yo mr rava";
+        System.out.println();
+        System.out.println("Muy bien, esta vez usaremos un String que contendrá:");
+        System.out.println(" '" + yo + "'");
+        System.out.println("El último " + yo.substring(3,5) + " sale en el a partir del carácter número " + yo.lastIndexOf("mr"));
+
+        // 9. startsWith(cadena)
+        System.out.println();
+        System.out.println("startsWith: es un método que funciona como booleano, su función es comprobar si un String empieza o no por lo que tu le especifiques");
+
+        String poto = "patata";
+        System.out.println("Por ejemplo, vamos a usar un String con la siguiente palabra: " + poto);
+        System.out.println("¿" + poto + " empieza por " +  poto.substring(2) + "? " + poto.startsWith("tata"));
+        System.out.println("¿" + poto + " empieza por " +  poto.substring(1,2) + "? " + poto.startsWith("a"));
+        System.out.println("¿" + poto + " empieza por " +  poto.substring(0,1) + "? " + poto.startsWith("p"));
+        System.out.println("¿" + poto + " empieza por " +  poto.substring(0,3) + "? " + poto.startsWith("pat"));
+
+        // 10. replace(cadena1, cadena2)
+        System.out.println();
+        System.out.println("replace: es un método que se utiliza para sustituir carácteres");
+
+        String nameSupreme = "Mi nombre es, Goku. Pongo una de g random";
+        System.out.println();
+        System.out.println("Utilizaré un String con el contenido:");
+        System.out.println(nameSupreme);
+        System.out.println("Sustituiremos todas las G por K:");
+        System.out.println(nameSupreme.replace('G', 'K'));
+
+        System.out.println();
+        System.out.println("Si te has fijado, la g minúscula se  mantiene igual, esto es porque este método diferencia entre mayúsculas y minúsculas.");
+
+        // 11. toUpperCase()
+        System.out.println();
+        System.out.println("Aquí englobare dos métodos, 'toUpperCase' y 'toLowerCase'");
+        System.out.println("Son dos métodos que se utilizan para pasar todo a mayúscula o minúscula respectivamente");
+        String pollo = "La comunicación es fluida, Manolito";
+        System.out.println("toUpperCase: " + pollo.toUpperCase());
+        System.out.println("toLowerCase: " + pollo.toLowerCase());
+
+        System.out.println();
+        System.out.println("También hay una versión de estos métodos que se puede usar para contar las mayúsculas o minúsculas");
+
+        for(int i = 0; i < pollo.length(); i++){
+            char culo = pollo.charAt(i);
+            int stopTHECOUNT = 0;
+            while(culo.isLowerCase()){
+
+            }
+        }
+
+
 
 
 
@@ -81,6 +152,12 @@ public class strings {
         equals - https://www.w3schools.com/java/ref_string_equals.asp
         equalsIgnoreCase - https://www.w3schools.com/java/ref_string_equalsignorecase.asp
         substring - https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html#substring(int)
+        indexOf - https://www.w3schools.com/java/ref_string_indexof.asp#gsc.tab=0
+        lastIndexOf - https://www.w3schools.com/java/ref_string_lastindexof.asp
+        startsWith(cadena) - https://www.w3schools.com/java/ref_string_startswith.asp
+        replace(cadena1, cadena2) - https://www.w3schools.com/java/ref_string_replace.asp
+        toUpperCase && toLowerCase - https://www.w3schools.com/java/ref_string_touppercase.asp
+
          */
 
     }
