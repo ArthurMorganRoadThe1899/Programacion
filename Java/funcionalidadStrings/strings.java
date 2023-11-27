@@ -140,9 +140,34 @@ public class strings {
                 stopTHECOUNT = stopTHECOUNT + 1;
             }
         }
-        System.out.println(stopTHECOUNT);
+        System.out.println("La frase " + "'" + pollo + "' tiene " + stopTHECOUNT + " mayúsculas.");
 
+        // 12. toCharArray()
+        System.out.println();
+        System.out.println("toCharArray: permite transformar una variable de String en un array de carácteres");
 
+        String falseArrString = "Algo paso";
+        System.out.println("");
+        char [] charA = falseArrString.toCharArray();
+
+        System.out.println();
+        System.out.println("He creado una nueva variable de String, su contenido es: " + "'" + falseArrString + "'");
+        System.out.println("Ahora lo he pasado a array de carácteres. voy a llamar a la primera letra de cada palabra: " + charA[0] + " " +charA[5]);
+
+        // 13. split(expresión)
+        System.out.println();
+        System.out.println("split: es un método de java que te permite separar a partir de un carácter");
+
+        // Custom input string
+        String emailabro = "tidusasdeloszanarkandabes@gmail.com";
+        System.out.println("Usaremos un email como ejemplo, este será " + emailabro);
+        String[] arrEBro = emailabro.split("@", 33);
+
+        System.out.println("Vamos a separar 'tidusasdeloszanarkandabes' y 'gmail' a través del @");
+        for (String i : arrEBro) {
+            System.out.print("[" + i + " / ");
+        }
+        System.out.print("]");
 
 
 
