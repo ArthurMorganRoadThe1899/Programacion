@@ -9,9 +9,11 @@ public class cifradoCesar {
 
         System.out.println("Dime una palabra, y la cifrare con el cifrado César de la magnitud de desplazamiento que busques.");
 
-            do{
-        rS = in.nextLine(); // Palabra a cifrar
-            }while(rS.isEmpty());
+        //do {
+            do {
+                rS = in.nextLine(); // Palabra a cifrar
+            } while (rS.isEmpty());
+        //}while(); // Arreglar este while, he de hacer que pida obligatoriamentem que rS tenga solo letters
 
         System.out.println("¿Que tipo de cifrado César quieres utilizar?");
         int rC = in.nextInt(); // Número de rotación
