@@ -2,9 +2,9 @@ package Programacion.Java.cesar;
 import java.util.Scanner;
 
 public class cifradoCesar {
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        char[] abecedario = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '};
+        char[] abecedario = new char[] {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         String rS;
 
         System.out.println("Dime una palabra, y la cifrare con el cifrado César de la magnitud de desplazamiento que busques.");
@@ -25,7 +25,9 @@ public class cifradoCesar {
             while(rCS[i] != abecedario[b]){
                 b++;
             }
-
+            if(abecedario.equals(" ")){
+                System.out.println("a");
+            }
             rCS[i] = abecedario[b + rC];
         }
 
