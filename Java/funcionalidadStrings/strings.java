@@ -147,7 +147,7 @@ public class strings {
         System.out.println("toCharArray: permite transformar una variable de String en un array de carácteres");
 
         String falseArrString = "Algo paso";
-        System.out.println("");
+        System.out.println();
         char [] charA = falseArrString.toCharArray();
 
         System.out.println();
