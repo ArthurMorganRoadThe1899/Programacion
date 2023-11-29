@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class cifradoCesar {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        char[] abecedario = new char[] {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+        char[] abecedario = new char[] {' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
         String rS;
 
         System.out.println("Dime una palabra, y la cifrare con el cifrado César de la magnitud de desplazamiento que busques.");
@@ -25,9 +25,11 @@ public class cifradoCesar {
             while(rCS[i] != abecedario[b]){
                 b++;
             }
-            if(abecedario.equals(" ")){
-                System.out.println("a");
-            }
+            /*if(abecedario[b].equals(" ")){
+                rCS[i] = abecedario[0];
+            }else{
+
+            }*/
             rCS[i] = abecedario[b + rC];
         }
 
@@ -49,4 +51,5 @@ public class cifradoCesar {
 
 // PROBLEMAS //
     Como he dejado ahora esto, el cifrado funciona, pero si se pasa del limite peta, y si pongo espacios también
+
  */
