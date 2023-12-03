@@ -2,7 +2,7 @@ package Programacion.Java.cesar;
 import java.util.Scanner;
 
 
-public class cifradoCesar2 {
+public class cifradoCesar {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int a = 97, z = 122;
