@@ -1,7 +1,7 @@
 package Programacion.Java.cesar.no;
 import java.util.Scanner;
 
-public class xifratCesar {
+public class xifratCesarJoseph {
     static  final int minLowercaseValue = 97;
     static final int maxLowercaseValue = 122;
     static final int lowercaseRangeValue = 26;
