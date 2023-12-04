@@ -18,13 +18,11 @@ public class cifradoCesar {
 
         System.out.println("¿Que tipo de cifrado César quieres utilizar?");
 
-        //do {
             try {
                 rC = in.nextInt(); // Número de rotación
             }catch (Exception e){
                 System.out.println("Solo acepto números enteros");
             }
-        //}while(rC >= 26);
 
         char [] rCS = rS.toCharArray();
 
@@ -32,17 +30,25 @@ public class cifradoCesar {
 
                 if(rCS[i] == 32){
                     System.out.print(rCS[i]);
-                }else{
+                }else if(Character.isUpperCase(rCS[i])){
+                    // Función para dar la vuelta a las mayúsculas
                     rCS[i] += rC;
+                        if (rCS[i] <= A) {
+                            while (rCS[i] < A) rCS[i] += 26;
+                        } else if (rCS[i] >= Z) {
+                            while (rCS[i] > Z) rCS[i] -= 26;
+                        }
+                    }else if(Character.isLowerCase(rCS[i])) {
                     // Función para dar la vuelta a las minúsculas
+                    rCS[i] += rC;
                         if (rCS[i] <= a) {
                             while (rCS[i] < a) rCS[i] += 26;
                         } else if (rCS[i] >= z) {
                             while (rCS[i] > z) rCS[i] -= 26;
                         }
+                    }
                     System.out.print(rCS[i]);
                 }
             }
         }
-    }
 
