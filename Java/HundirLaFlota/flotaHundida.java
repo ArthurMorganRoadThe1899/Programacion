@@ -8,7 +8,6 @@ public class flotaHundida {
         String enter;
         int difficulty;
 
-
         System.out.println("\n" +
                 "\n" +
                 "888             888   888   888                888     d8b         \n" +
@@ -41,6 +40,7 @@ public class flotaHundida {
                 System.out.println("El rango de dificultades está entre 1 y 4");
             }
         }while(difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4);
+
 
 
     }
