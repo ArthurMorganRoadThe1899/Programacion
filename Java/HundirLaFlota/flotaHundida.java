@@ -1,12 +1,13 @@
 package Programacion.Java.HundirLaFlota;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 public class flotaHundida {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int[][] tablero = new int[10][10];
-        int[][] tableroO = new int[10][10];
         String enter;
-        int difficulty;
+        int difficulty, max_disparos, longitud_t, lanchaN = 0, portaavionesN = 0, buqueN = 0, acorazadoN = 0, totalB = 0;
+        char lancha = 'L', portaaviones = 'P', buques = 'B',  acorazados = 'Z', awa = 'A';
 
         System.out.println("\n" +
                 "\n" +
@@ -24,7 +25,7 @@ public class flotaHundida {
                 "\n");
 
         System.out.println("[PRESIONA CUALQUIER BOTÓN PARA EMPEZAR]");
-            enter = in.nextLine();
+        in.nextLine();
 
         System.out.println("#########################\n" +
                 "###-MENU-DE-DIFICULTAD-##\n" +
@@ -36,12 +37,91 @@ public class flotaHundida {
         System.out.println("SELECCIONA ALGUNA DE ESTAS DIFICULTADES \n[1 | 2 | 3 | 4]");
         do {
             difficulty = in.nextInt();
-            if(difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4){
+            if (difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4) {
                 System.out.println("El rango de dificultades está entre 1 y 4");
             }
-        }while(difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4);
+        } while (difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4);
+
+        if (difficulty == 1) {
+            max_disparos = 50;
+            longitud_t = 10;
+            lanchaN = 5;
+            portaavionesN = 1;
+            buqueN = 2;
+            acorazadoN = 1;
+            totalB = lanchaN + portaavionesN + buqueN + acorazadoN;
+            char[][] tablero = crearTablero(lancha, buques, acorazados, portaaviones, difficulty, longitud_t, awa, lanchaN, portaavionesN, buqueN, acorazadoN, totalB);
+            mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados);
+        }
+        else if (difficulty == 2) {
+            System.out.println("prueba2");
+        }
+        else if (difficulty == 3) {
+            System.out.println("prueba3");
+        }
+        else if (difficulty == 4) {
+            System.out.println("prueba4");
+        }
 
 
+    }
+    //====================
+    //== MOSTRAR TABLERO
+    //====================
+    static void mostrarTablero(char[][] tablero, char awa, char lancha, char buques, char acorazados, char portaaviones) {
+        int longitudTablero = tablero.length;;
+        for(int fila = 0; fila < longitudTablero; fila++){
+            for(int colu = 0; colu < longitudTablero; colu++){
+                char pos = tablero[fila][colu];
+                //System.out.print(pos);
 
+              if(pos == lancha){
+                  System.out.print(awa + " ");
+              }else{
+                    System.out.print(pos + " ");
+                }
+              }
+            }
+        }
+
+    //============================================
+    //== PARÁMETROS DE LA PARTIDA | CREAR TABLERO
+    //============================================
+    static char[][] crearTablero(char lancha, char buques, char acorazados, char portaaviones, int difficulty, int longitud_t, char awa, int lanchaN, int portaavionesN, int buqueN, int acorazadoN, int totalB){
+        char[][] tablero = new char[longitud_t][longitud_t];
+
+        for(char[]filas:tablero){
+            Arrays.fill(filas,awa);
+        }
+     return situarCosas(tablero, lancha, lanchaN, portaaviones, portaavionesN, buques, buqueN, acorazados, acorazadoN, awa, totalB);
+    }
+    //=================
+    //== SITUAR BARCOS
+    //=================
+    static char[][] situarCosas(char[][] tablero, char lancha, int lanchaN, char portaaviones, int portaavionesN, char buques, int buqueN, char acorazados, int acorazadoN, char awa, int totalB) {
+        int barcosSituados = 0;
+        int longitudTablero = tablero.length;
+        //METER VARIABLES LOOPS PARA EL RESTO DE VEHICULOS
+        while (barcosSituados < lanchaN) {
+            int[] ubicar = coordenadas(longitudTablero);
+
+            char ubicacion = tablero[ubicar[0]][ubicar[1]];
+            if (ubicacion == awa) {
+                tablero[ubicar[0]][ubicar[1]] = lancha;
+                barcosSituados++;
+            }
+        }
+        return tablero;
+    }
+
+    //==========================================
+    //== GENERAR COORDENADAS DE CADA TRANSPORTE
+    //==========================================
+    private static int[] coordenadas(int longitudTablero) {
+        int[] coordenadas = new int[2];
+        for(int i = 0; i < coordenadas.length; i++){
+            coordenadas[i] = new Random().nextInt(longitudTablero);
+        }
+        return coordenadas;
     }
 }
