@@ -1,0 +1,8 @@
+Aún queda por añadir las siguientes cosas:
+
+	- Sistema de intentos
+	- Comprobador de si tienes todos los barcos derribados para darte game over o victoria
+	- Más dificultades
+	- Modo personalizadss
+	- Añadir el resto de vehiculos aparte de la lancha
+	- Añadir longitudes a cada vehiculo
