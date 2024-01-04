@@ -7,7 +7,7 @@ public class flotaHundida {
         Scanner in = new Scanner(System.in);
         String enter;
         int difficulty, max_disparos, longitud_t, lanchaN = 0, portaavionesN = 0, buqueN = 0, acorazadoN = 0, totalB = 0;
-        char lancha = 'L', portaaviones = 'P', buques = 'B',  acorazados = 'Z', awa = 'a', tocado = 'X', hundido = 'X', fallo = '0';
+        char lancha = 'L', portaaviones = 'P', buques = 'B',  acorazados = 'Z', awa = '-', tocado = 'X', hundido = 'X', fallo = '#';
 
         System.out.println("\n" +
                 "\n" +
@@ -43,24 +43,25 @@ public class flotaHundida {
         } while (difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4);
 
         if (difficulty == 1) {
-            max_disparos = 50;
+            max_disparos = 1; //Son 50 acá
             longitud_t = 10;
             lanchaN = 5;
             portaavionesN = 1;
             buqueN = 2;
             acorazadoN = 1;
             totalB = lanchaN + portaavionesN + buqueN + acorazadoN;
-            char[][] tablero = crearTablero(lancha, buques, acorazados, portaaviones, difficulty, longitud_t, awa, lanchaN, portaavionesN, buqueN, acorazadoN, totalB);
-            mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados);
-            int barcoSinDetectar = totalB;
-            while (barcoSinDetectar > 0){
-                int[] adivinadorMagico = obtenerCoordenadas(longitud_t);
-                char actualizadorTablero = evObt(adivinadorMagico, tablero, awa, lancha, portaaviones, buques, acorazados, tocado, hundido, fallo);
-                if (actualizadorTablero == tocado){
-                    barcoSinDetectar--;
-                }
-                tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
-                mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados);
+                char[][] tablero = crearTablero(lancha, buques, acorazados, portaaviones, difficulty, longitud_t, awa, lanchaN, portaavionesN, buqueN, acorazadoN, totalB);
+                mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+                int barcoSinDetectar = totalB;
+                while (barcoSinDetectar > 0) {
+                    int[] adivinadorMagico = obtenerCoordenadas(longitud_t);
+                    char actualizadorTablero = evObt(adivinadorMagico, tablero, awa, lancha, portaaviones, buques, acorazados, tocado, hundido, fallo);
+                    if (actualizadorTablero == tocado) {
+                        barcoSinDetectar--;
+                    }
+                    tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
+                    int gameOver = endAll(max_disparos);
+                    mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
             }
         }
         else if (difficulty == 2) {
@@ -79,27 +80,33 @@ public class flotaHundida {
     //====================
     //== MOSTRAR TABLERO
     //====================
-    static void mostrarTablero(char[][] tablero, char awa, char lancha, char buques, char acorazados, char portaaviones){
-        int longitudTablero = tablero.length;
-        System.out.print(" ");
-        for(int i = 0; i < tablero.length; i++){
-            System.out.print(" " + (i + 1));
-        }
-        System.out.println();
-        for(int fila = 0; fila < longitudTablero; fila++){
-            System.out.print(fila + " ");
-            for(int colu = 0; colu < longitudTablero; colu++){
-              char pos = tablero[fila][colu];
-
-              if(pos == lancha){
-                  System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
-              }else{
-                    System.out.print(pos + " ");
-                }
-              }
-            System.out.println();
+    static void mostrarTablero(char[][] tablero, char awa, char lancha, char buques, char acorazados, char portaaviones, int max_disparos){
+            int longitudTablero = tablero.length;
+            System.out.print(" ");
+            for (int i = 0; i < tablero.length; i++) {
+                System.out.print(" " + (i + 1));
             }
-        System.out.println();
+            System.out.println();
+            for (int fila = 0; fila < longitudTablero; fila++) {
+                System.out.print(fila + " ");
+                for (int colu = 0; colu < longitudTablero; colu++) {
+                    char pos = tablero[fila][colu];
+
+                    if (pos == lancha) {
+                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                    } else if (pos == portaaviones) {
+                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                    } else if (pos == acorazados) {
+                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                    } else if (pos == buques) {
+                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                    } else {
+                        System.out.print(pos + " ");
+                    }
+                }
+                System.out.println();
+            }
+            System.out.println();
         }
 
     //============================================
@@ -130,6 +137,36 @@ public class flotaHundida {
                 barcosSituados++;
             }
         }
+        barcosSituados = 0;
+        while (barcosSituados < portaavionesN) {
+            int[] ubicar = coordenadas(longitudTablero);
+
+            char ubicacion = tablero[ubicar[0]][ubicar[1]];
+            if (ubicacion == awa) {
+                tablero[ubicar[0]][ubicar[1]] = portaaviones;
+                barcosSituados++;
+            }
+        }
+        barcosSituados = 0;
+        while (barcosSituados < buqueN) {
+            int[] ubicar = coordenadas(longitudTablero);
+
+            char ubicacion = tablero[ubicar[0]][ubicar[1]];
+            if (ubicacion == awa) {
+                tablero[ubicar[0]][ubicar[1]] = buques;
+                barcosSituados++;
+            }
+        }
+        barcosSituados = 0;
+        while (barcosSituados < acorazadoN) {
+            int[] ubicar = coordenadas(longitudTablero);
+
+            char ubicacion = tablero[ubicar[0]][ubicar[1]];
+            if (ubicacion == awa) {
+                tablero[ubicar[0]][ubicar[1]] = acorazados;
+                barcosSituados++;
+            }
+        }
         return tablero;
     }
 
@@ -153,13 +190,13 @@ public class flotaHundida {
     do {
         System.out.println("Elige fila: ");
         fila = new Scanner(System.in).nextInt();
-    }while(fila < 1 || fila > longitudT + 1);
+    }while(fila < 0 || fila > longitudT + 1);
 
     do {
         System.out.println("Elige columna: ");
         colu = new Scanner(System.in).nextInt();
     }while(colu < 1 || colu > longitudT + 1);
-    return new int[]{fila, colu - 1}; //TESTESTESTESTESTESTESTEWSTSAFWA
+    return new int[]{fila, colu - 1};
 }
 
     //============================================
@@ -174,10 +211,10 @@ public class flotaHundida {
             mensajin = "¡¡TOCADO!!";
             casObjet = tocado;
         }else if(casObjet == awa){
-            mensajin = "jsjsjs, fallaste pringao";
-            casObjet = tocado;
+            mensajin = "FALLASTE";
+            casObjet = fallo;
         }else{
-            mensajin = "je, ya lo golpeaste pndejo";
+            mensajin = "AQUÍ YA GOLPEASTE";
         }
         System.out.println(mensajin);
         return casObjet;
@@ -186,12 +223,20 @@ public class flotaHundida {
     //========================================
     //== ACTUALIZADOR INTERACTIVO DEL TABLERO
     //========================================
-    static char[][] actTab(char[][] tablero, int[] adivinadorMagico, char actualizadorTablero) {
+    static char[][] actTab(char[][] tablero, int[] adivinadorMagico, char actualizadorTablero){
         int fila = adivinadorMagico[0];
         int colu = adivinadorMagico[1];
         tablero[fila][colu] = actualizadorTablero;
         return tablero;
     }
+
+    //=======================
+    //== SISTEMA DE INTENTOS
+    //=======================
+    /*static int endAll(int max_disparos){
+
+
+    }*/
 }
 
 
