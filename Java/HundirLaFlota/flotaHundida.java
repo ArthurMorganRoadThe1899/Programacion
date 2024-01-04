@@ -33,14 +33,14 @@ public class flotaHundida {
                 "@2·-NORMAL--------------#\n" +
                 "@3·-DIFÍCIL-------------#\n" +
                 "@4·-PERSONALIZADO-------#\n" +
-                "#########################\n");
-        System.out.println("SELECCIONA ALGUNA DE ESTAS DIFICULTADES \n[1 | 2 | 3 | 4]");
+                "#########################\n" +
+                "\nSELECCIONA ALGUNA DE ESTAS DIFICULTADES \n[1 | 2 | 3 | 4]");
         do {
             difficulty = in.nextInt();
-            if (difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4) {
+            if (difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4){
                 System.out.println("El rango de dificultades está entre 1 y 4");
             }
-        } while (difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4);
+        }while(difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4);
 
         if (difficulty == 1) {
             max_disparos = 1; //Son 50 acá
@@ -60,7 +60,6 @@ public class flotaHundida {
                         barcoSinDetectar--;
                     }
                     tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
-                    int gameOver = endAll(max_disparos);
                     mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
             }
         }
@@ -73,7 +72,7 @@ public class flotaHundida {
         else if (difficulty == 4) {
             System.out.println("prueba4");
         }
-
+        System.out.println("\nTHANK YOU SO MUCH FOR TO PLAYING MY GAME");
 
     }
 
@@ -184,7 +183,7 @@ public class flotaHundida {
     //==================
     //== REVELAR BARCOS
     //==================
-    static int[] obtenerCoordenadas(int longitudT) {
+    static int[] obtenerCoordenadas(int longitudT){
     int fila;
     int colu;
     do {
@@ -202,14 +201,16 @@ public class flotaHundida {
     //============================================
     //== EVALUADOR DE LA POSICIÓN DE LAS CASILLAS
     //============================================
-    static char evObt(int[] adivinadorMagico, char[][] tablero, char awa, char lancha, char portaaviones, char buques, char acorazados, char tocado, char hundido, char fallo) {
+    static char evObt(int[] adivinadorMagico, char[][] tablero, char awa, char lancha, char portaaviones, char buques, char acorazados, char tocado, char hundido, char fallo){
         String mensajin;
         int fila = adivinadorMagico[0];
         int colu = adivinadorMagico[1];
         char casObjet = tablero[fila][colu];
+        int c = 0;
         if(casObjet == lancha || casObjet == portaaviones || casObjet == buques || casObjet == acorazados){
             mensajin = "¡¡TOCADO!!";
             casObjet = tocado;
+            c = c + 1;
         }else if(casObjet == awa){
             mensajin = "FALLASTE";
             casObjet = fallo;
@@ -230,13 +231,6 @@ public class flotaHundida {
         return tablero;
     }
 
-    //=======================
-    //== SISTEMA DE INTENTOS
-    //=======================
-    /*static int endAll(int max_disparos){
-
-
-    }*/
 }
 
 

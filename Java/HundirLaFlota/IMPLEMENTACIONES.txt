@@ -6,3 +6,8 @@ Aún queda por añadir las siguientes cosas:
 	- Añadir longitudes a cada vehiculo
 	- Más dificultades
 	- Modo personalizadss
+
+	- LOGS
+		* En estos instantes el método de situar barcos toma la cantidad total de ellos.
+		  por lo que, a la hora de hundir barcos, al hundir 10 veces barcos, se acaba automáticamente el juego
+		  (INCLUYENDO SI GOLPEAS 10 VECES AL MISMO BARCO)
