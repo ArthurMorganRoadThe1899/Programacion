@@ -1,7 +1,7 @@
 Aún queda por añadir las siguientes cosas:
 
-	- Sistema de intentos
-	- Comprobador de si tienes todos los barcos derribados para darte game over o victoria
+	- Sistema de intentos (CUMPLIDO)
+	- Comprobador de si tienes todos los barcos derribados para darte game over o victoria (CUMPLIDO)
 	- Añadir el resto de vehiculos aparte de la lancha (CUMPLIDO)
 	- Añadir longitudes a cada vehiculo
 	- Más dificultades
@@ -9,5 +9,7 @@ Aún queda por añadir las siguientes cosas:
 
 	- LOGS
 		* En estos instantes el método de situar barcos toma la cantidad total de ellos.
-		  por lo que, a la hora de hundir barcos, al hundir 10 veces barcos, se acaba automáticamente el juego
-		  (INCLUYENDO SI GOLPEAS 10 VECES AL MISMO BARCO)
+		  por lo que, a la hora de hundir barcos, al hundir una cantidad equivalente de barcos al total de los que hay, se acaba el juego
+		  (ESTO INCLUYE SI LE DAS EXCLUSIVAMENTE A UN SOLO BARCO)
+		  (Ejemplo: Hay 10 barcos, golpeas 10 veces a uno solo y el código se deja de ejecutar)
+		  (BAJO ESTÁ PREMISA, ES MUY FÁCIL DE CHEESEAR EL JUEGO Y GANAR SIEMPRE)

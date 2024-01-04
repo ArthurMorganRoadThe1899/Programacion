@@ -6,7 +6,7 @@ public class flotaHundida {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String enter;
-        int difficulty, max_disparos, longitud_t, lanchaN = 0, portaavionesN = 0, buqueN = 0, acorazadoN = 0, totalB = 0;
+        int difficulty, max_disparos = 0, longitud_t, lanchaN = 0, portaavionesN = 0, buqueN = 0, acorazadoN = 0, totalB = 0;
         char lancha = 'L', portaaviones = 'P', buques = 'B',  acorazados = 'Z', awa = '-', tocado = 'X', hundido = 'X', fallo = '#';
 
         System.out.println("\n" +
@@ -43,7 +43,7 @@ public class flotaHundida {
         }while(difficulty != 1 && difficulty != 2 && difficulty != 3 && difficulty != 4);
 
         if (difficulty == 1) {
-            max_disparos = 1; //Son 50 acá
+            max_disparos = 49;
             longitud_t = 10;
             lanchaN = 5;
             portaavionesN = 1;
@@ -61,6 +61,15 @@ public class flotaHundida {
                     }
                     tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
                     mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+                    if(max_disparos == 0){
+                        System.out.println("\nPERDISTE PENDEJITO");
+                        break;
+                    }else if(max_disparos != 0){
+                        max_disparos--;
+                    }
+            }
+            if(max_disparos != 0){
+                System.out.println("\nGANASTE");
             }
         }
         else if (difficulty == 2) {
@@ -72,7 +81,8 @@ public class flotaHundida {
         else if (difficulty == 4) {
             System.out.println("prueba4");
         }
-        System.out.println("\nTHANK YOU SO MUCH FOR TO PLAYING MY GAME");
+
+        System.out.println("\nTHANK YOU SO MUCH FOR TO PLAYING MY GAME\nBYE!");
 
     }
 
@@ -206,11 +216,9 @@ public class flotaHundida {
         int fila = adivinadorMagico[0];
         int colu = adivinadorMagico[1];
         char casObjet = tablero[fila][colu];
-        int c = 0;
         if(casObjet == lancha || casObjet == portaaviones || casObjet == buques || casObjet == acorazados){
             mensajin = "¡¡TOCADO!!";
             casObjet = tocado;
-            c = c + 1;
         }else if(casObjet == awa){
             mensajin = "FALLASTE";
             casObjet = fallo;
