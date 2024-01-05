@@ -73,13 +73,102 @@ public class flotaHundida {
             }
         }
         else if (difficulty == 2) {
-            System.out.println("prueba2");
+            max_disparos = 29;
+            longitud_t = 10;
+            lanchaN = 2;
+            portaavionesN = 1;
+            buqueN = 1;
+            acorazadoN = 1;
+            totalB = lanchaN + portaavionesN + buqueN + acorazadoN;
+            char[][] tablero = crearTablero(lancha, buques, acorazados, portaaviones, difficulty, longitud_t, awa, lanchaN, portaavionesN, buqueN, acorazadoN, totalB);
+            mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+            int barcoSinDetectar = totalB;
+            while (barcoSinDetectar > 0) {
+                int[] adivinadorMagico = obtenerCoordenadas(longitud_t);
+                char actualizadorTablero = evObt(adivinadorMagico, tablero, awa, lancha, portaaviones, buques, acorazados, tocado, hundido, fallo);
+                if (actualizadorTablero == tocado) {
+                    barcoSinDetectar--;
+                }
+                tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
+                mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+                if(max_disparos == 0){
+                    System.out.println("\nPERDISTE PENDEJITO");
+                    break;
+                }else if(max_disparos != 0){
+                    max_disparos--;
+                }
+            }
+            if(max_disparos != 0){
+                System.out.println("\nGANASTE");
+            }
         }
         else if (difficulty == 3) {
-            System.out.println("prueba3");
+            max_disparos = 9;
+            longitud_t = 10;
+            lanchaN = 1;
+            portaavionesN = 0;
+            buqueN = 1;
+            acorazadoN = 0;
+            totalB = lanchaN + portaavionesN + buqueN + acorazadoN;
+            char[][] tablero = crearTablero(lancha, buques, acorazados, portaaviones, difficulty, longitud_t, awa, lanchaN, portaavionesN, buqueN, acorazadoN, totalB);
+            mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+            int barcoSinDetectar = totalB;
+            while (barcoSinDetectar > 0) {
+                int[] adivinadorMagico = obtenerCoordenadas(longitud_t);
+                char actualizadorTablero = evObt(adivinadorMagico, tablero, awa, lancha, portaaviones, buques, acorazados, tocado, hundido, fallo);
+                if (actualizadorTablero == tocado) {
+                    barcoSinDetectar--;
+                }
+                tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
+                mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+                if(max_disparos == 0){
+                    System.out.println("\nPERDISTE PENDEJITO");
+                    break;
+                }else if(max_disparos != 0){
+                    max_disparos--;
+                }
+            }
+            if(max_disparos != 0){
+                System.out.println("\nGANASTE");
+            }
         }
         else if (difficulty == 4) {
-            System.out.println("prueba4");
+            System.out.println("BIENVENIDO AL MODO PERSONALIZADO\nAQUÍ PUEDES ELEGIR LOS PARÁMETROS QUE QUIERAS PARA TU BATTLESHIP");
+            System.out.println("\n¿Cuantos intentos quieres?");
+            max_disparos = in.nextInt();
+            System.out.println("¿Como de gordo quieres el mapa?\n(si me dices 10 haré un 10x10, 300)");
+            longitud_t = in.nextInt();
+            System.out.println("¿Cuantas lanchas quieres?");
+            lanchaN = in.nextInt();
+            System.out.println("¿Cuantos portaaviones quieres?");
+            portaavionesN = in.nextInt();
+            System.out.println("¿Cuantos buques quieres?");
+            buqueN = in.nextInt();
+            System.out.println("¿Cuantos acorazados quieres?");
+            acorazadoN = in.nextInt();
+            System.out.println("\nMUY BIEN, EMPECEMOS");
+            totalB = lanchaN + portaavionesN + buqueN + acorazadoN;
+            char[][] tablero = crearTablero(lancha, buques, acorazados, portaaviones, difficulty, longitud_t, awa, lanchaN, portaavionesN, buqueN, acorazadoN, totalB);
+            mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+            int barcoSinDetectar = totalB;
+            while (barcoSinDetectar > 0) {
+                int[] adivinadorMagico = obtenerCoordenadas(longitud_t);
+                char actualizadorTablero = evObt(adivinadorMagico, tablero, awa, lancha, portaaviones, buques, acorazados, tocado, hundido, fallo);
+                if (actualizadorTablero == tocado) {
+                    barcoSinDetectar--;
+                }
+                tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
+                mostrarTablero(tablero, awa, lancha, portaaviones, buques, acorazados, max_disparos);
+                if(max_disparos == 0){
+                    System.out.println("\nPERDISTE PENDEJITO");
+                    break;
+                }else if(max_disparos != 0){
+                    max_disparos--;
+                }
+            }
+            if(max_disparos != 0){
+                System.out.println("\nGANASTE");
+            }
         }
 
         System.out.println("\nTHANK YOU SO MUCH FOR TO PLAYING MY GAME\nBYE!");
@@ -199,12 +288,12 @@ public class flotaHundida {
     do {
         System.out.println("Elige fila: ");
         fila = new Scanner(System.in).nextInt();
-    }while(fila < 0 || fila > longitudT + 1);
+    }while(fila < 0 || fila > longitudT + 1 || fila > longitudT);
 
     do {
         System.out.println("Elige columna: ");
         colu = new Scanner(System.in).nextInt();
-    }while(colu < 1 || colu > longitudT + 1);
+    }while(colu < 1 || colu > longitudT + 1 || colu > longitudT);
     return new int[]{fila, colu - 1};
 }
 

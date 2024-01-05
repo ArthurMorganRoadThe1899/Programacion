@@ -3,11 +3,11 @@ Aún queda por añadir las siguientes cosas:
 	- Sistema de intentos (CUMPLIDO)
 	- Comprobador de si tienes todos los barcos derribados para darte game over o victoria (CUMPLIDO)
 	- Añadir el resto de vehiculos aparte de la lancha (CUMPLIDO)
-	- Añadir longitudes a cada vehiculo
-	- Más dificultades
-	- Modo personalizadss
+	- Añadir longitudes a cada vehiculo (INCUMPLIDO)
+	- Más dificultades (CUMPLIDO)
+	- Modo personalizadss (CUMPLIDO)
 
-	- LOGS
+	- LOGS DE DETALLES
 		* En estos instantes el método de situar barcos toma la cantidad total de ellos.
 		  por lo que, a la hora de hundir barcos, al hundir una cantidad equivalente de barcos al total de los que hay, se acaba el juego
 		  (ESTO INCLUYE SI LE DAS EXCLUSIVAMENTE A UN SOLO BARCO)
