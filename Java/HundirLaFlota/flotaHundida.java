@@ -7,7 +7,7 @@ public class flotaHundida {
         Scanner in = new Scanner(System.in);
         String enter;
         int difficulty, max_disparos = 0, longitud_t, lanchaN = 0, portaavionesN = 0, buqueN = 0, acorazadoN = 0, totalB = 0;
-        char lancha = 'L', portaaviones = 'P', buques = 'B',  acorazados = 'Z', awa = '-', tocado = 'X', hundido = 'X', fallo = '#';
+        char lancha = 'L', portaaviones = 'P', buques = 'B',  acorazados = 'Z', awa = '-', tocado = 'X', hundido = 'x', fallo = '#';
 
         System.out.println("\n" +
                 "\n" +
@@ -56,7 +56,7 @@ public class flotaHundida {
                 while (barcoSinDetectar > 0) {
                     int[] adivinadorMagico = obtenerCoordenadas(longitud_t);
                     char actualizadorTablero = evObt(adivinadorMagico, tablero, awa, lancha, portaaviones, buques, acorazados, tocado, hundido, fallo);
-                    if (actualizadorTablero == tocado) {
+                    if (actualizadorTablero == tocado) { // Modificar para que no te de puntos infinitos cada vez que tocas un tocado
                         barcoSinDetectar--;
                     }
                     tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
@@ -311,6 +311,9 @@ public class flotaHundida {
         }else if(casObjet == awa){
             mensajin = "FALLASTE";
             casObjet = fallo;
+        }else if(casObjet == tocado){
+            casObjet = hundido;
+            mensajin = "YA GOLPEASTE A ESTE VEHICULO";
         }else{
             mensajin = "AQUÍ YA GOLPEASTE";
         }
