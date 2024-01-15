@@ -56,7 +56,7 @@ public class flotaHundida {
                 while (barcoSinDetectar > 0) {
                     int[] adivinadorMagico = obtenerCoordenadas(longitud_t);
                     char actualizadorTablero = evObt(adivinadorMagico, tablero, awa, lancha, portaaviones, buques, acorazados, tocado, hundido, fallo);
-                    if (actualizadorTablero == tocado) { // Modificar para que no te de puntos infinitos cada vez que tocas un tocado
+                    if (actualizadorTablero == tocado) {
                         barcoSinDetectar--;
                     }
                     tablero = actTab(tablero, adivinadorMagico, actualizadorTablero);
@@ -193,11 +193,11 @@ public class flotaHundida {
                     if (pos == lancha) {
                         System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
                     } else if (pos == portaaviones) {
-                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                        System.out.print(awa + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
                     } else if (pos == acorazados) {
-                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                        System.out.print(awa + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
                     } else if (pos == buques) {
-                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                        System.out.print(awa + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
                     } else {
                         System.out.print(pos + " ");
                     }
@@ -212,7 +212,6 @@ public class flotaHundida {
     //============================================
     static char[][] crearTablero(char lancha, char buques, char acorazados, char portaaviones, int difficulty, int longitud_t, char awa, int lanchaN, int portaavionesN, int buqueN, int acorazadoN, int totalB){
         char[][] tablero = new char[longitud_t][longitud_t];
-
         for(char[]filas:tablero){
             Arrays.fill(filas,awa);
         }
