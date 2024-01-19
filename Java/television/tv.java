@@ -4,6 +4,7 @@ public class tv {
     static int canal = 1;
     static int volumen = 50;
     static int remember;
+    static boolean ir = false;
 
     static char what = ' ';
     public static void main(String[] args) {
@@ -31,10 +32,10 @@ public class tv {
                     do {
                         System.out.println("|| CAMBIAR CANAL (UP) - U" +
                                 "\n|| CAMBIAR CANAL (DOWN) - D" +
-                                "\n|| SUBIR VOLUMEN - M" +
-                                "\n|| BAJAR VOLUMEN - L" +
-                                "\n|| SILENCIAR VOLUMEN VOLUMEN - S [SI YA ESTA SILENCIADO, EL VOLUMEN VOLVERÁ A SU ESTADO PREVIO A HABERSE SILENCIADO]" +
-                                "\n|| APAGAR TV - P" +
+                                "\n|| SUBIR VOLUMEN (MORE) - M" +
+                                "\n|| BAJAR VOLUMEN (LESS) - L" +
+                                "\n|| SILENCIAR VOLUMEN VOLUMEN (SILENCE) - S [SI YA ESTA SILENCIADO, EL VOLUMEN VOLVERÁ A SU ESTADO PREVIO A HABERSE SILENCIADO]" +
+                                "\n|| APAGAR TV (POWEROFF) - P" +
                                 "\n\nESCRIBE ALGUNO DE ESTOS CARACTERES PARA HACER DICHAS ACCIONES" +
                                 "\nLA TV ACTUALMENTE ESTA ASÍ\n");
                         display();
@@ -60,52 +61,84 @@ public class tv {
 
 
 
-                    }while(what != 'P');
+                    }while(what != 'P' && what != 'p');
         System.out.println("\nAPAGANDO...");
 
     }
 
+    //==========================================
+    //== MOSTRAR EL ESTADO ACTUAL DEL TELEVISOR
+    //==========================================
     public static void display(){
         System.out.println("Canal actual: " + canal +
                 "\nVolumen: " + volumen);
     }
+
+    //===================
+    //== ZIPEAR PA'RRIBA
+    //===================
     public static void upCanal(){
         canal++;
-    }
-    public static void downCanal(){
-        boolean i = false;
-        do{
-        canal--;
-        i = true;
-        }while(canal > 0);
-
-        if (!i){
-            System.out.println("NO HAY CANALES MÁS BAJOS QUE 1");
+        if(canal > 25){
+            canal = 1;
         }
     }
 
+    //===================
+    //== ZIPEAR PA' BAJO
+    //===================
+    public static void downCanal(){
+        canal--;
+        if(canal < 1){
+            canal = 25;
+        }
+    }
+
+    //=====================
+    //== SILENCIAR VOLUMEN
+    //=====================
     public static void silenciar(){
         if(volumen != 0){
             remember = volumen;
             volumen = 0;
+            ir = true;
         }else if(volumen == 0){
             volumen = remember;
         }
     }
 
-    //CORREGIR TEMA DE VOLUMENES Y CANALES
+    //=================
+    //== SUBIR VOLUMEN
+    //=================
     public static void upVolume(){
-        if(volumen >= 98){
-            volumen = volumen - 2;
-        }else if(volumen < 98){
-            volumen = 98;
+        if(ir){
+            volumen = remember;
+            volumen = volumen + 2;
+            ir = false;
+        }else{
+            volumen = volumen + 2;
+        }
+
+        if(volumen > 100){
+            System.out.println("\n[[[[[[[[[[EL VOLUMEN NO PUEDE SUBIR MÁS]]]]]]]]]\n");
+            volumen = 100;
         }
     }
 
+    //=================
+    //== BAJAR VOLUMEN
+    //=================
     public static void downVolume(){
-        if(volumen <= 2){
+        if(ir){
+            volumen = remember;
             volumen = volumen - 2;
-        }else if(volumen > 0){
+            ir = false;
+        }else{
+            volumen = volumen - 2;
+        }
+
+        if(volumen < 0){
+            System.out.println("\n[[[[[[[[[[EL VOLUMEN NO PUEDE BAJAR MÁS]]]]]]]]]\n");
             volumen = 0;
         }
     }
