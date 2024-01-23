@@ -191,7 +191,7 @@ public class flotaHundida {
                     char pos = tablero[fila][colu];
 
                     if (pos == lancha) {
-                        System.out.print(pos + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
+                        System.out.print(pos  + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
                     } else if (pos == portaaviones) {
                         System.out.print(awa + " "); //SI AQUÍ CAMBIAR "awa" por "pos" REVELA LA POSICIÓN DE LOS BARCOS //
                     } else if (pos == acorazados) {
