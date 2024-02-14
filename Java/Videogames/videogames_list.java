@@ -6,9 +6,12 @@ import java.util.List;
 public class videogames_list {
 
     static int i = 1;
+    static String add;
 
     public videogames_list(int i){
         this.i = i;
+        this.add = add;
+
     }
 
     public static void games() {
@@ -21,4 +24,10 @@ public class videogames_list {
         System.out.println(vgL.get(i));
         System.out.println(vgD.get(i));
     }
+
+    public static void add(){
+
+    }
+
+
 }

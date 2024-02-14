@@ -13,27 +13,31 @@ public class videogames {
                 "\n==== 4. POKÉMON ================" +
                 "\n==== 5. YAKUZA =================" +
                 "\n--------------------------------");
+    boolean y;
 
-        boolean y;
-        do {
-            try {
-                x = Integer.parseInt(in.nextLine());
-                y = false;
-            } catch (Exception err) {
-                y = true;
-            }
-            if(y){
-                System.out.println("Valor introducido no valido");
-                y = true;
-            }
-        }while(y);
+    do {
+        try {
+            x = Integer.parseInt(in.nextLine());
+            y = false;
+        } catch (Exception err) {
+            y = true;
+        }
+        if (y) {
+            System.out.println("Valor introducido no valido");
+            y = true;
+        }
+    } while (y);
 
-        x = x - 1;
-        videogames_list value = new videogames_list(x);
-        videogames_list.games();
+    x = x - 1;
+    videogames_list value = new videogames_list(x);
+    videogames_list.games();
 
     System.out.println("¿Quieres añadir un juego?\n[S?]");
     r = in.next().charAt(0);
+
+        System.out.println("¿Cual juego añades?");
+        String a = in.nextLine();
+        /*videogames_list.*/ /*<- HACER UN ADD DEL JUEGO QUE AÑADES*/
 
 
     }
