@@ -32,7 +32,7 @@ public class videogames {
     videogames_list value = new videogames_list(x);
     videogames_list.games();
 
-    System.out.println("¿Quieres añadir un juego?\n[S?]");
+    System.out.println("\n¿Quieres añadir un juego?\n[S?]");
     r = in.next().charAt(0);
 
         System.out.println("¿Cual juego añades?");
