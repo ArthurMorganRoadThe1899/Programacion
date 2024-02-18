@@ -35,9 +35,7 @@ public class videogames {
     System.out.println("\n¿Quieres añadir un juego?\n[S?]");
     r = in.next().charAt(0);
 
-        System.out.println("¿Cual juego añades?");
-        String a = in.nextLine();
-        /*videogames_list.*/ /*<- HACER UN ADD DEL JUEGO QUE AÑADES*/
+             /* ? METEREMOS UN MÉTODO EN EL ARCHIVO videogames_list*/
 
 
     }
