@@ -1,0 +1,11 @@
+
+
+PART 1
+
+- Crearem la classe "GatBasic".
+
+- Per a saber quins atributs ha de tindre aquesta classe cal preguntar-se quines característiques tenen els gats: Tots els gats són d'un color determinat, pertanyen a una raça, tenen una edat, tenen un determinat sexe - són mascles o femelles - i tenen un pes que es pot expressar en quilograms. Aquests seran per tant els atributs que tindrà la classe GatBasic .
+
+- Per a saber què mètodes hem d'implementar cal preguntar-se quines accions estan associades als gats: Els gats miolen, ronronegen, mengen i si són mascles es barallen entre ells per a disputar-se el favor de les femelles. Aquestos seran els mètodes que definim en la classe.
+
+PART 2. Usa i comenta breument tots els mètodes de la classe ArrayList vistos en els apunts. A la classe de prova nomena-la "ProvesGat".
