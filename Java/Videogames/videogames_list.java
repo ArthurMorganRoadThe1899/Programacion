@@ -24,13 +24,12 @@ public class videogames_list {
     }
 
     public static void games() {
-
         System.out.println("\n" + vgL.get(i));
         System.out.println(vgD.get(i));
     }
 
     public static void add(){
-        System.out.println("Muy bien, escribe un juego:\n");
+        System.out.println("Muy bien, escribe un juego:");
         String r = in.nextLine();
         vgL.add(r);
         System.out.println("Muy bien, ahora añadele una descripción");
@@ -38,5 +37,29 @@ public class videogames_list {
         vgD.add(d);
     }
 
+    public static void remove(){
+        boolean tf = false;
 
+        System.out.println("Muy bien, está es la lista de juegos ¿cuál quieres borrar?\n[VAN EN EL ORDEN EN EL QUE SALEN, 1, 2, 3...]\n" + vgL);
+        int i = in.nextInt();
+        i = i - 1;
+        do {
+            tf = false;
+            try {
+                vgL.remove(i);
+                vgD.remove(i);
+                tf = false;
+            } catch (Exception e) {
+                tf = true;
+            }
+            if (tf) {
+                System.out.println("Valor introducido no valido");
+                tf = true;
+            }
+        }while (tf);
+
+    }
+    public static void show(){
+        System.out.println(vgL);
+    }
 }
