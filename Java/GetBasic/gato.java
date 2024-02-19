@@ -6,7 +6,6 @@ public class gato {
 
     public static void main() {
         do {
-
             gatoFunciones.color();
             gatoFunciones.genero();
             gatoFunciones.peso();
