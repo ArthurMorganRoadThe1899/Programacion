@@ -4,7 +4,7 @@ public class gato {
     static Scanner in = new Scanner(System.in);
     static char res; /*Se utiliza para recopilar respuestas*/
 
-    public static void main() {
+    public static void main(String[] args) {
         do {
             gatoFunciones.color();
             gatoFunciones.genero();
@@ -12,7 +12,7 @@ public class gato {
             gatoFunciones.miau();
             gatoFunciones valor = new gatoFunciones((int) (Math.random()*2+0), (int) (Math.random()*4+0));
 
-            System.out.println("\n¿Volver a ejecutar el código?\n[S/N]");
+            System.out.println("\n¿Quieres sacar otro gato?\n[S/N]");
             boolean tf = false;
             do {
                 try {
