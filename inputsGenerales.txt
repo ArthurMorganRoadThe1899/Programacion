@@ -1,0 +1,17 @@
+    ==========================
+    ==== SALIR DEL CÓDIGO ====
+    ==========================
+            System.out.println("\n¿Volver a ejecutar el código?\n[S/N]");
+            boolean tf = false;
+            do {
+                try {
+                    do {
+                        res = in.next().charAt(0);
+                        if(res != 115 && res != 83 && res != 110 && res != 78){
+                            System.out.println("SOLO ADMITIMOS S/N");
+                        }
+                    }while(res != 115 && res != 83 && res != 110 && res != 78);
+                }catch(Exception err) {
+                    System.out.println("Valor invalido");
+                    tf = true;
+                }
