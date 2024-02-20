@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class gato {
     static Scanner in = new Scanner(System.in);
     static char res; /*Se utiliza para recopilar respuestas*/
-
-    public static void main(String[] args) {
+    static String gen;
+    public static void main() {/*String[] args*/
         do {
             gatoFunciones.color();
             gatoFunciones.genero();
@@ -29,5 +29,7 @@ public class gato {
 
             }while(tf);
         }while(res == 115 || res == 83);
+        gen = gatoFunciones.gender;
     }
+
 }

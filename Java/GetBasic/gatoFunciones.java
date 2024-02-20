@@ -9,14 +9,13 @@ public class gatoFunciones {
       =============================*/
     static int bin = (int) (Math.random()*2+0); /*bin se utiliza como condicional de dos posibilidades*/
     static int arraySel = (int) (Math.random()*4+0);
-
+    static String gender;
     /*=============================
       ==== 0. PUBLIC VARIABLES ====
       =============================*/
     public gatoFunciones(int bin, int arraySel){
         this.bin = bin;
         this.arraySel = arraySel;
-
     }
     /*===============================
       ==== 1. FUNCIÓN DE MAULLAR ====
@@ -42,12 +41,12 @@ public class gatoFunciones {
     public static void genero(){
         if(bin == 0){
             System.out.println("[GÉNERO]: Macho");
+            gender = "Macho";
         }else{
             System.out.println("[GÉNERO]: Hembra");
+            gender = "Hembra";
         }
     }
-
-
 
     /*=================
       ==== 4. PESO ====
