@@ -12,7 +12,7 @@ public class genericx {
         this.r = r;
     }
     /*===========================================
-      ==== 1. PEDIR VALORES DE UN MENU (1-5) ====
+      ==== 1. PEDIR VALORES DE UN MENU (1-6) ====
       ===========================================*/
     public static void valuesPlease(){
         boolean tf = false;
