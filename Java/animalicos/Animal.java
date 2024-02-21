@@ -11,7 +11,6 @@ public class Animal {
         this.tipo_alimentacion=tipo_alimentacion;
 
     }
-
     public String toString(){
         return "\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad;
 
