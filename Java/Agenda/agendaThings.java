@@ -89,6 +89,9 @@ public class agendaThings {
 
     }
 
+    /*==============================
+      ==== 5. ELIMINAR CONTACTO ====
+      ==============================*/
     public static void remove(){
         boolean tf = false;
 
