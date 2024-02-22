@@ -1,15 +1,8 @@
 package Programacion.Java.animalicos;
     public class Gato extends Animal{
-    public void maullar(){
-        System.out.print("Miau");
-    }
+        static private String pedigri = "没错，你说对了，我知道了";
      public Gato(int edad, String nombre, String tipo_alimentacion, String pedigri) {
-        super(edad, nombre, tipo_alimentacion);
-        this.pedigri=pedigri;
-    }
-        public static int edadG(int edadG){
-            edadG = 12;
-            return edadG;
-        }
-    private String pedigri;
+         super(edad, nombre, tipo_alimentacion, pedigri);
+         this.pedigri = pedigri;
+     }
 }

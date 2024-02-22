@@ -1,17 +1,9 @@
 package Programacion.Java.animalicos;
 
     public class Perro extends Animal{
-   
-    public static void ladrar(){
-        System.out.print("Guau");
-    }
-    public static int edadP(int edadP){
-        edadP = 18;
-        return edadP;
-    }
+        static private String raza = "サンチェス犬";
     public Perro(int edad, String nombre, String tipo_alimentacion, String raza) {
-        super(edad, nombre, tipo_alimentacion);
+        super(edad, nombre, tipo_alimentacion, raza);
         this.raza = raza;
     }
-    private String raza;
 }
