@@ -1,17 +1,128 @@
 package Programacion.Java.animalicos;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import static java.lang.Integer.parseInt;
 
 public class AppAnimales {
-    public static void main(String[] args) {
-        //ACT 1
-        Gato g1 = new Gato(21, "a","pescado", "rechulon");
-        Perro p1 = new Perro(12, "uwu", "carne","culon" );
-        Caballo c1 = new Caballo(43, "cgf", "manzanas", "8");
+    static Scanner in = new Scanner(System.in);
+    /*HE CONVERTIDO TODOS LOS ATRIBUTOS DE LOS ANIMALES EN PUBLIC, NO SUPE HACERLO COMO ES DEBIDO...*/
+    /*static  Caballo c1 = new Caballo(Caballo.edad, Caballo.nombre, Caballo.tipo_alimentacion, Caballo.patas);
+    static  Gato g1 = new Gato(Gato.edad, Gato.nombre, Gato.tipo_alimentacion, Gato.pedigri);
+    static Perro p1 = new Perro(Perro.edad, Perro.nombre, Perro.tipo_alimentacion, Perro.raza);*/
+    static int r, r2;
+    public static void main(String[] args){
+        System.out.println("\nHola amable usuario ¿qué le gustaría hacer? :3\n\n");
+        do{
+        System.out.println("=========================================================\n" +
+                "==== 1. VER INFORMACIÓN DE LOS ANIMALES EN LA GRANJA ====\n" +
+                "==== 2. MODIFICAR ANIMALICOS ============================\n" +
+                "==== 3. COMPARADOR EDADES ENTRE ANIMALES ================\n"+
+                "==== 4. SALIR ===========================================\n" +
+                "=========================================================\n");
 
-        System.out.println(g1);
-        System.out.println(p1);
-        System.out.println(c1);
+        boolean tf = false;
+        do {
+            try {
+                r = parseInt(in.nextLine());
+                tf = false;
+            }catch(Exception err){
+                tf = true;
+            }
+            if(r != 1 && r != 2 && r != 3 && r != 4){
+                System.out.println("Valor introducido no valido");
+                tf = true;
+            }
+        }while(tf);
+
+        /*1. MOSTRAR A TODOS LOS BICHOS Y SUS RASGOS*/
+        if(r == 1){
+            new Caballo(Caballo.edad, Caballo.nombre, Caballo.tipo_alimentacion, Caballo.patas);
+            System.out.print("CABALLO:");
+            Caballo.info();
+            System.out.println("Patas: " + Caballo.patas +"\n");
+
+            Gato g1 = new Gato(Gato.edad, Gato.nombre, Gato.tipo_alimentacion, Gato.pedigri);
+            System.out.print("GATO:");
+            Gato.info();
+            System.out.println("Perigri: " + Gato.pedigri +"\n");
+
+            Perro p1 = new Perro(Perro.edad, Perro.nombre, Perro.tipo_alimentacion, Perro.raza);
+            System.out.print("PERRO:");
+            Perro.info();
+            System.out.println("Patas: " + Perro.raza +"\n");
+
+        /*2. MODIFICAR ANIMALICOS*/
+        }else if(r == 2){
+            System.out.println("Muy bien, a quien quieres modificar?\n" +
+                    "====================\n" +
+                    "==== 1. CABALLO ====\n" +
+                    "==== 2. GATO =======\n" +
+                    "==== 3. PERRO ======\n" +
+                    "====================");
+            boolean tf2 = false;
+            do {
+                try {
+                    r2 = parseInt(in.nextLine());
+                    tf2 = false;
+                }catch(Exception err){
+                    tf2 = true;
+                }
+                if(r != 1 && r != 2 && r != 3){
+                    System.out.println("Valor introducido no valido");
+                    tf2 = true;
+                }
+            }while(tf);
+
+            if(r2 == 1){
+                System.out.println("Muy bien, adelante, modifica al caballo\nNOMBRE:");
+                Caballo.nombre = in.nextLine();
+                System.out.println("EDAD:");
+                Caballo.edad = in.nextInt();
+                System.out.println("TIPO DE ALIMENTACIÓN:");
+                Caballo.tipo_alimentacion = in.nextLine();
+                System.out.println("PATAS:");
+                Caballo.patas = in.nextInt();
+            }else if(r2 == 2){
+                System.out.println("Muy bien, adelante, modifica al perrico\nNOMBRE:");
+                Perro.nombre = in.nextLine();
+                System.out.println("EDAD:");
+                Perro.edad = in.nextInt();
+                System.out.println("TIPO DE ALIMENTACIÓN:");
+                Perro.tipo_alimentacion = in.nextLine();
+                System.out.println("RAZA:");
+                Perro.raza = in.nextLine();
+            }else if(r2 == 3){
+                System.out.println("Muy bien, adelante, modifica al gatico\nNOMBRE:");
+                Gato.nombre = in.nextLine();
+                System.out.println("EDAD:");
+                Gato.edad = in.nextInt();
+                System.out.println("TIPO DE ALIMENTACIÓN:");
+                Gato.tipo_alimentacion = in.nextLine();
+                System.out.println("Pedigri:");
+                Gato.pedigri = in.nextLine();
+            }
+        /*3. VER LAS EDADES ENTRE LOS ANIMALICOS*/
+        }else if(r == 3){
+            System.out.println("Las edades son las siguientes:\n" +
+                    "Caballo: " + Caballo.edad + " | Gato: " + Gato.edad + " | Perro: " + Perro.edad + "\n");
+            ArrayList<Integer> papeadaDeMameo = new ArrayList<Integer>(Arrays.asList(Caballo.edad, Gato.edad, Perro.edad));
+
+            int mayor = 0;
+            int menor = 0;
+            for(int i = 9; i < papeadaDeMameo.size(); i++){
+                if(papeadaDeMameo.get(i) > mayor){
+                    mayor == papeadaDeMameo.get(i);
+                }
+            }
+
+        }
+
+
+
+
+        }while(r != 4);
+
     }
 }
-/*
-https://gvaedu-my.sharepoint.com/personal/v_mascarosalvarez_edu_gva_es/_layouts/15/onedrive.aspx?e=5%3A9f186b87983b405fb80992e0214369a5&at=9&CT=1708541055421&OR=OWA%2DNT&CID=e5a1317e%2D246b%2D45f3%2D10b6%2D0dd12a324b86&id=%2Fpersonal%2Fv%5Fmascarosalvarez%5Fedu%5Fgva%5Fes%2FDocuments%2FBenigasl%C3%B3%2023%2D24%2FProg%2FUD7%2DHerencia%2FExercici%20Animals%20I&FolderCTID=0x01200091A0F5BBEB74004E82215565A902A48E&view=0
- */
