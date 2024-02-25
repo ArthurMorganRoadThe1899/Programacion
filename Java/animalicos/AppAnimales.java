@@ -13,7 +13,7 @@ public class AppAnimales {
     static Perro p1 = new Perro(Perro.edad, Perro.nombre, Perro.tipo_alimentacion, Perro.raza);*/
     static int respuesta, respuesta2;
     public static void main(String[] args){
-        System.out.println("\nHola amable usuario ¿qué le gustaría hacer? :3\n\n");
+        System.out.println("\nHola amable usuario ¿qué le gustaría hacer? :3\n");
         do{
         System.out.println("=========================================================\n" +
                 "==== 1. VER INFORMACIÓN DE LOS ANIMALES EN LA GRANJA ====\n" +
