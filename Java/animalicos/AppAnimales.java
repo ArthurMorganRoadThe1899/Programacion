@@ -30,7 +30,7 @@ public class AppAnimales {
             }catch(Exception err){
                 tf = true;
             }
-            if(r != 1 && r != 2 && r != 3 && r != 4){
+            if(r <1 || r > 4){
                 System.out.println("Valor introducido no valido");
                 tf = true;
             }
