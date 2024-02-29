@@ -1,2 +1,9 @@
-package Programacion.Java.Transporte.Tipo;public class Terrestre {
+package Programacion.Java.Transporte.Tipo;
+import Programacion.Java.Transporte.Vehiculo;
+
+public abstract class Terrestre extends Vehiculo {
+
+    public Terrestre(String nombre, String matricula, String modelo, String ruedas) {
+        super(nombre, matricula, modelo);
+    }
 }
