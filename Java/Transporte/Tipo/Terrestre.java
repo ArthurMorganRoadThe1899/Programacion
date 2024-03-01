@@ -3,7 +3,7 @@ import Programacion.Java.Transporte.Vehiculo;
 
 public abstract class Terrestre extends Vehiculo {
 
-    public Terrestre(String nombre, String matricula, String modelo, String ruedas) {
+    public Terrestre(String nombre, String matricula, String modelo, int numeroRuedas) {
         super(nombre, matricula, modelo);
     }
 }

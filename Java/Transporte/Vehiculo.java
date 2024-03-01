@@ -10,8 +10,9 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-    public static void especificaciones() {
-        System.out.println("Vehiculo: " + nombre + "\nModelo: " + modelo + "\nMatricula: " + matricula);
+    @Override
+    public String toString() {
+        return "Vehiculo: " + nombre + "\nModelo: " + modelo + "\nMatricula: " + matricula;
     }
 
 }
