@@ -5,25 +5,15 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
-public class AppAnimales {
+public class    AppAnimales {
     static int respuesta, respuesta2;
-    static Perro p1 = new Perro(3, "Bobby", "Variado", "Aria");
-    static Perro p2 = new Perro(7, "Lulu", "Debatible", "Mestizo");
-    static Gato g1 = new Gato(2, "Luna", "Basura", "Nose");
-    static Gato g2 = new Gato(2, "Pecas", "Si", "De la punta de los cojones");
+    static Perro p1 = new Perro(20, "Bobby", "Variado", "Durmiendo", "Ladrido", "2-4-2004", false, "Mestizo");
+    static Perro p2 = new Perro(17, "Lulu", "Mucho pienso", "Jugeteando", "Ladrido", "3-2-2007", false, "Chihuahua");
+    static Gato g1 = new Gato(17, "Luna", "Variado con carne", "-", "Maullido", "6-7-1967", true, "???");
+    static Gato g2 = new Gato(9, "Pecas", "Variado con bichos", "Comiendo", "Maullido", "8-2-2015", false, "Potente");
     static Scanner in = new Scanner(System.in);
-
-    public void añadirAnimal(){
-
-    }
-
-    public String info(){
-        return "\nNombre: "+Animal.nombre+"\nTipo de alimentación: "+Animal.tipo_alimentacion+"\nEdad: "+Animal.edad;
-    }
-
     public static void main(String[] args){
-
-
+        
 
         /*System.out.println("\nHola amable usuario ¿qué le gustaría hacer? :3\n");
 
