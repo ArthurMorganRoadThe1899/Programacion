@@ -7,13 +7,13 @@ public class Inventario {
     static private Scanner in = new Scanner(System.in);
     static private ArrayList<Animal> animales = new ArrayList();
     public Inventario(){
-        animales.add(new Caballo(3, "Manolo", "Fibra", "Comiendo", "Relincho", "5-6-2017", false, 5));
+
     }
 
     public static void mostrarListaDeAnimales(){
         for(int i = 0; i < animales.size(); i++){
             Animal animal = animales.get(i);
-            Animal.info();
+            animal.info();
         }
     }
 
