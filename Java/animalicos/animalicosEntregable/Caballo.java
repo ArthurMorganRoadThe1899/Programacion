@@ -13,8 +13,4 @@ public class Caballo extends Animal{
         this.tipo_alimentacion = tipo_alimentacion;
         this.patas=patas;
     }
-
-    public static void main(String[] args) {
-
-    }
 }

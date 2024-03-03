@@ -10,4 +10,8 @@ public abstract class Animal {
         this.nombre = nombre;
         this.tipo_alimentacion = tipo_alimentacion;
     }
+
+    public String info(){
+        return "\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad;
+    }
 }
