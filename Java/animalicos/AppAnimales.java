@@ -7,10 +7,6 @@ import static java.lang.Integer.parseInt;
 
 public class AppAnimales {
     static Scanner in = new Scanner(System.in);
-    /*HE CONVERTIDO TODOS LOS ATRIBUTOS DE LOS ANIMALES EN PUBLIC, NO SUPE HACERLO COMO ES DEBIDO...*/
-    /*static  Caballo c1 = new Caballo(Caballo.edad, Caballo.nombre, Caballo.tipo_alimentacion, Caballo.patas);
-    static  Gato g1 = new Gato(Gato.edad, Gato.nombre, Gato.tipo_alimentacion, Gato.pedigri);
-    static Perro p1 = new Perro(Perro.edad, Perro.nombre, Perro.tipo_alimentacion, Perro.raza);*/
     static int respuesta, respuesta2;
     public static void main(String[] args){
         System.out.println("\nHola amable usuario ¿qué le gustaría hacer? :3\n");
@@ -22,19 +18,19 @@ public class AppAnimales {
                 "==== 4. SALIR ===========================================\n" +
                 "=========================================================\n");
 
-        boolean tf = false;
+        boolean trueFalse = false;
         do {
             try {
                 respuesta = parseInt(in.nextLine());
-                tf = false;
+                trueFalse = false;
             }catch(Exception err){
-                tf = true;
+                trueFalse = true;
             }
             if(respuesta <1 || respuesta > 4){
                 System.out.println("Valor introducido no valido");
-                tf = true;
+                trueFalse = true;
             }
-        }while(tf);
+        }while(trueFalse);
 
         /*1. MOSTRAR A TODOS LOS BICHOS Y SUS RASGOS*/
         if(respuesta == 1){
@@ -73,8 +69,9 @@ public class AppAnimales {
                     System.out.println("Valor introducido no valido");
                     tf2 = true;
                 }
-            }while(tf);
+            }while(trueFalse);
 
+            /*MODIFICACIÓN DE LOS ANIMALICOS*/
             if(respuesta2 == 1){
                 System.out.println("Muy bien, adelante, modifica al caballo\nNOMBRE:");
                 Caballo.nombre = in.nextLine();
