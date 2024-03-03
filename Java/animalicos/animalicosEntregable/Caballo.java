@@ -1,4 +1,4 @@
-package Programacion.Java.animalicos;
+package Programacion.Java.animalicos.animalicosEntregable;
 
 public class Caballo extends Animal{
     static public int patas = 5;
@@ -12,5 +12,9 @@ public class Caballo extends Animal{
         this.nombre = nombre;
         this.tipo_alimentacion = tipo_alimentacion;
         this.patas=patas;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

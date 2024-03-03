@@ -5,10 +5,15 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
-public class AppAnimales {
+public class AppAnimales_ {
+    static Perro_ p1 = new Perro_(3, "Bobby", "Variado", "Aria");
+    static Perro_ p2 = new Perro_(7, "Lulu", "Debatible", "Mestizo");
+    static Gato_ g1 = new Gato_(2, "Luna", "Basura", "Nose");
+    static Gato_ g2 = new Gato_(2, "Pecas", "Si", "De la punta de los cojones");
     static Scanner in = new Scanner(System.in);
     static int respuesta, respuesta2;
     public static void main(String[] args){
+        System.out.println(g1);
         System.out.println("\nHola amable usuario ¿qué le gustaría hacer? :3\n");
         do{
         System.out.println("=========================================================\n" +
@@ -34,20 +39,20 @@ public class AppAnimales {
 
         /*1. MOSTRAR A TODOS LOS BICHOS Y SUS RASGOS*/
         if(respuesta == 1){
-            new Caballo(Caballo.edad, Caballo.nombre, Caballo.tipo_alimentacion, Caballo.patas);
+            new Caballo_(Caballo_.edad, Caballo_.nombre, Caballo_.tipo_alimentacion, Caballo_.patas);
             System.out.print("CABALLO:");
-            Caballo.info();
-            System.out.println("Patas: " + Caballo.patas +"\n");
+            Caballo_.info();
+            System.out.println("Patas: " + Caballo_.patas +"\n");
 
-            Gato g1 = new Gato(Gato.edad, Gato.nombre, Gato.tipo_alimentacion, Gato.pedigri);
+            Gato_ g1 = new Gato_(Gato_.edad, Gato_.nombre, Gato_.tipo_alimentacion, Gato_.pedigri);
             System.out.print("GATO:");
-            Gato.info();
-            System.out.println("Perigri: " + Gato.pedigri +"\n");
+            Gato_.info();
+            System.out.println("Perigri: " + Gato_.pedigri +"\n");
 
-            Perro p1 = new Perro(Perro.edad, Perro.nombre, Perro.tipo_alimentacion, Perro.raza);
+            Perro_ p1 = new Perro_(Perro_.edad, Perro_.nombre, Perro_.tipo_alimentacion, Perro_.raza);
             System.out.print("PERRO:");
-            Perro.info();
-            System.out.println("Raza: " + Perro.raza +"\n");
+            Perro_.info();
+            System.out.println("Raza: " + Perro_.raza +"\n");
 
         /*2. MODIFICAR ANIMALICOS*/
         }else if(respuesta == 2){
@@ -74,37 +79,37 @@ public class AppAnimales {
             /*MODIFICACIÓN DE LOS ANIMALICOS*/
             if(respuesta2 == 1){
                 System.out.println("Muy bien, adelante, modifica al caballo\nNOMBRE:");
-                Caballo.nombre = in.nextLine();
+                Caballo_.nombre = in.nextLine();
                 System.out.println("TIPO DE ALIMENTACIÓN:");
-                Caballo.tipo_alimentacion = in.nextLine();
+                Caballo_.tipo_alimentacion = in.nextLine();
                 System.out.println("PATAS:");
-                Caballo.patas = in.nextInt();
+                Caballo_.patas = in.nextInt();
                 System.out.println("EDAD:");
-                Caballo.edad = in.nextInt();
+                Caballo_.edad = in.nextInt();
             }else if(respuesta2 == 2){
                 System.out.println("Muy bien, adelante, modifica al gatico\nNOMBRE:");
-                Gato.nombre = in.nextLine();
+                Gato_.nombre = in.nextLine();
                 System.out.println("TIPO DE ALIMENTACIÓN:");
-                Gato.tipo_alimentacion = in.nextLine();
+                Gato_.tipo_alimentacion = in.nextLine();
                 System.out.println("PEDIGRI:");
-                Gato.pedigri = in.nextLine();
+                Gato_.pedigri = in.nextLine();
                 System.out.println("EDAD:");
-                Gato.edad = in.nextInt();
+                Gato_.edad = in.nextInt();
             }else if(respuesta2 == 3){
                 System.out.println("Muy bien, adelante, modifica al perrico\nNOMBRE:");
-                Perro.nombre = in.nextLine();
+                Perro_.nombre = in.nextLine();
                 System.out.println("TIPO DE ALIMENTACIÓN:");
-                Perro.tipo_alimentacion = in.nextLine();
+                Perro_.tipo_alimentacion = in.nextLine();
                 System.out.println("RAZA:");
-                Perro.raza = in.nextLine();
+                Perro_.raza = in.nextLine();
                 System.out.println("EDAD:");
-                Perro.edad = in.nextInt();
+                Perro_.edad = in.nextInt();
             }
         /*3. VER LAS EDADES ENTRE LOS ANIMALICOS*/
         }else if(respuesta == 3){
             System.out.println("Las edades son las siguientes:\n" +
-                    "Caballo: " + Caballo.edad + " | Gato: " + Gato.edad + " | Perro: " + Perro.edad + "\n");
-            ArrayList<Integer> papeadaDeMameo = new ArrayList<Integer>(Arrays.asList(Caballo.edad, Gato.edad, Perro.edad));
+                    "Caballo: " + Caballo_.edad + " | Gato: " + Gato_.edad + " | Perro: " + Perro_.edad + "\n");
+            ArrayList<Integer> papeadaDeMameo = new ArrayList<Integer>(Arrays.asList(Caballo_.edad, Gato_.edad, Perro_.edad));
 
             int mayor = 0;
             int menor = 999999999;

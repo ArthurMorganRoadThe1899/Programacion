@@ -11,10 +11,12 @@ public abstract class Acuatico extends Vehiculo{
         super(nombre, matricula, modelo);
     }
 
+    /*
     @Override
     public String toString() {
         return Vehiculo.especificaciones() + "\neslora: " + eslora;
     }
+    */
 
     public static void main(String[] args) {
 

@@ -16,8 +16,10 @@ public class Barco extends Acuatico {
 
     }
 
+    /*
     public static void main(String[] args) {
         System.out.println(Barco.es());
     }
+    */
 
 }
