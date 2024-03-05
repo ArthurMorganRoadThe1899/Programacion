@@ -21,4 +21,13 @@ public class Caballo extends Animal{
         this.muerte = muerte;
         this.patas=patas;
     }
+
+    @Override
+    public void info(){
+        if (!muerte) {
+            System.out.println("\n[CABALLO]\nCABALLO:\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +estado+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nPatas: "+patas);
+        }else if(muerte){
+            System.out.println("\n[CABALLO]\nCABALLO:\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nPatas: "+patas);
+        }
+    }
 }

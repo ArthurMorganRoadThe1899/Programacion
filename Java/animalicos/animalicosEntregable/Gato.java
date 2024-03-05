@@ -19,4 +19,13 @@ package Programacion.Java.animalicos.animalicosEntregable;
          this.muerte = muerte;
          this.pedigri = pedigri;
      }
+
+     @Override
+     public void info(){
+         if (!muerte) {
+             System.out.println("\n[GATO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +estado+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nPedigri: "+pedigri);
+         }else if(muerte){
+             System.out.println("\n[GATO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nPedigri: "+pedigri);
+         }
+     }
 }

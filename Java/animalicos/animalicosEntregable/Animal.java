@@ -19,11 +19,19 @@ public abstract class Animal {
         this.muerte = muerte;
     }
 
-    public static void info(){
+    public void info(){
+        if (!muerte) {
+            System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +estado+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido);
+        }else if(muerte){
+            System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido);
+        }
+    }
+}
+
+        /*
         if (!muerte) {
             System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +ruido+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+estado);
         }else if(muerte){
             System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+estado);
         }
-    }
-}
+        */

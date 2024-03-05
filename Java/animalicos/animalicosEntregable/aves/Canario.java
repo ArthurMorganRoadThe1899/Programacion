@@ -25,4 +25,13 @@ public class Canario extends Aves {
         this.color = color;
         this.canta = canta;
     }
+
+    @Override
+    public void info(){
+        if (!muerte) {
+            System.out.println("\n[CANARIO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +estado+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nVuela: "+vuela+"\nColor: "+color+"\nCanta: "+canta);
+        }else if(muerte){
+            System.out.println("\n[CANARIO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nVuela: "+vuela+"\nColor: "+color+"\nCanta: "+canta);
+        }
+    }
 }

@@ -25,4 +25,13 @@ public class Loro extends Aves {
         this.origen = origen;
         this.habla = habla;
     }
+
+    @Override
+    public void info(){
+        if (!muerte) {
+            System.out.println("\n[LORO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +estado+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nVuela: "+vuela+"\nOrigen: "+origen+"\nHabla: "+habla);
+        }else if(muerte){
+            System.out.println("\n[LORO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nVuela: "+vuela+"\nOrigen: "+origen+"\nHabla: "+habla);
+        }
+    }
 }

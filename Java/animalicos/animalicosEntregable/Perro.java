@@ -17,4 +17,13 @@ package Programacion.Java.animalicos.animalicosEntregable;
         this.raza = raza;
         this.ruido = ruido;
     }
+
+    @Override
+    public void info(){
+        if (!muerte) {
+            System.out.println("\n[PERRO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +estado+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nRaza: "+raza);
+        }else if(muerte){
+            System.out.println("\n[PERRO]\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+ruido+"\nRaza: "+raza);
+        }
+    }
 }

@@ -22,4 +22,13 @@ public abstract class Aves extends Animal {
         this.muerte = muerte;
         this.vuela = vuela;
     }
+
+    @Override
+    public void info(){
+        if (!muerte) {
+            System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +ruido+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+estado+"\nVuela: "+vuela);
+        }else if(muerte){
+            System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+estado+"\nVuela: "+vuela);
+        }
+    }
 }
