@@ -27,11 +27,3 @@ public abstract class Animal {
         }
     }
 }
-
-        /*
-        if (!muerte) {
-            System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: " +ruido+"\nfecha de nacimiento: "+fechaNacimiento+"\nRuido: "+estado);
-        }else if(muerte){
-            System.out.println("\nNombre: "+nombre+"\nTipo de alimentación: "+tipo_alimentacion+"\nEdad: "+edad+"\nEstado: muerte\nFecha de nacimiento: "+fechaNacimiento+"\nRuido: "+estado);
-        }
-        */

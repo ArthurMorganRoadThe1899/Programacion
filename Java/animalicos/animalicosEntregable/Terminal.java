@@ -7,8 +7,12 @@ public class Terminal {
     static int respuesta;
     static private Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
-        animales.add(new Caballo(3, "Manolo", "Fibra", "Comiendo", "Relincho", "5-6-2017", false, 5));
-        animales.add(new Perro(20, "Bobby", "Variado", "Durmiendo", "Ladrido", "2-4-2004", false, "Mestizo"));
+        Caballo c1 = new Caballo(3, "Manolo", "Fibra", "Comiendo", "Relincho", "5-6-2017", false, 5);
+        Perro p1 = new Perro(20, "Bobby", "Variado", "Durmiendo", "Ladrido", "2-4-2004", false, "Mestizo");
+        Perro p2 = new Perro(1, "Chispa", "Variado", "Jugando", "Ladrido", "12-6-2023", false, "Chihuahua");
+        animales.add(c1);
+        animales.add(p1);
+        animales.add(p2);
 
         System.out.println("\nHOLA USUARIO, BIENVENIDO A LA TERMINAL DE ANIMALES.");
     do {
