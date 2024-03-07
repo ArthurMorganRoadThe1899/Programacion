@@ -198,11 +198,11 @@ public class Inventario {
                 System.out.println("¿ESTA MUERTO? [ESCRIBE true/false]");
                 afirmacion = in.nextBoolean();
 
-                System.out.println("¿PUEDE VOLANDAR? [ESCRIBE true/false]");
+                System.out.println("¿PUEDE VOLAR? [ESCRIBE true/false]");
                 vuela = in.nextBoolean();
 
                 System.out.println("DAME UNA BREVE DESCRIPCIÓN DE SU ORIGEN:");
-                origen = in.next();
+                origen = in.nextLine();
 
                 System.out.println("¿PUEDE HABLAR? [ESCRIBE true/false]");
                 habla = in.nextBoolean();

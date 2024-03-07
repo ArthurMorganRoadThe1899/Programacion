@@ -1,13 +1,13 @@
 package Programacion.Java.animalicos.animalicosEntregable;
     public class Gato extends Animal{
-        static public String pedigri;
-        static public int edad;
-        static public String nombre;
-        static public String tipo_alimentacion;
-        static public String estado;
-        static public String ruido;
-        static public String fechaNacimiento;
-        static public boolean muerte;
+        public String pedigri;
+        public int edad;
+        final public String nombre;
+        final public String tipo_alimentacion;
+        public String estado;
+        final public String ruido;
+        final public String fechaNacimiento;
+        final public boolean muerte;
      public Gato(int edad, String nombre, String tipo_alimentacion, String estado, String ruido, String fechaNacimiento, boolean muerte, String pedigri) {
          super(edad, nombre, tipo_alimentacion, ruido, estado, fechaNacimiento, muerte);
          this.edad = edad;
