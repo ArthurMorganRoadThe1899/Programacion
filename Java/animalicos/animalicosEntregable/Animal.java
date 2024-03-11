@@ -1,13 +1,13 @@
 package Programacion.Java.animalicos.animalicosEntregable;
 
 public abstract class Animal {
-    protected static String nombre;
-    protected static String tipo_alimentacion;
-    protected static int edad;
-    protected static String estado;
-    protected static String ruido;
-    protected static String fechaNacimiento;
-    protected static boolean muerte = false;
+    protected final String nombre;
+    protected final String tipo_alimentacion;
+    protected int edad;
+    protected String estado;
+    protected final String ruido;
+    protected final String fechaNacimiento;
+    protected boolean muerte = false;
     
     public Animal(int edad, String nombre, String tipo_alimentacion, String estado, String ruido, String fechaNacimiento, boolean muerte){
         this.edad = edad;
