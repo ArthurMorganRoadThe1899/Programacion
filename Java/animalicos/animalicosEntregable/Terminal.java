@@ -30,7 +30,7 @@ public class Terminal {
         boolean trueFalse = false;
         do {
             try {
-                respuesta = parseInt(in.nextLine());
+                    respuesta = parseInt(in.nextLine());
                 trueFalse = false;
             }catch(Exception err){
                 System.out.println("Valor introducido erroneo o no había tal número de animal");

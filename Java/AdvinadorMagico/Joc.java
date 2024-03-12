@@ -14,7 +14,9 @@ public class Joc {
     ///////////////////////
     // INICIAR EL JUEGO //
     ///////////////////// -> Método vacío que los hijos rescribiran a su gusto
-    public void jugar(){}
+    public void jugar(){
+
+    }
 
     ////////////////////////////////
     // QUITARLE VIDAS AL JUGADOR //
@@ -51,8 +53,6 @@ public class Joc {
                 puedePasar = false;
             }
 
-            // Prueba
-            System.out.println(respuesta + " " + puedePasar);
         }while(!puedePasar);
     }
 }
