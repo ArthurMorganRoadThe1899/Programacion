@@ -1,8 +1,13 @@
 package Programacion.Java.AdvinadorMagico;
 import java.util.Scanner;
-public class Joc {
+public abstract class Joc {
+
     private static int vidas;
     private final int record = 0;
+
+    public Joc(int vidas){
+        this.vidas = vidas;
+    }
 
     /////////////////////////////////////////
     // MOSTRAR VIDAS RESTANTES AL JUGADOR //
@@ -14,9 +19,7 @@ public class Joc {
     ///////////////////////
     // INICIAR EL JUEGO //
     ///////////////////// -> Método vacío que los hijos rescribiran a su gusto
-    public void jugar(){
-
-    }
+    public static void jugar(){}
 
     ////////////////////////////////
     // QUITARLE VIDAS AL JUGADOR //
@@ -54,5 +57,9 @@ public class Joc {
             }
 
         }while(!puedePasar);
+
+        if(respuesta == 'S' || respuesta =='s'){
+            jugar();
+        }
     }
 }

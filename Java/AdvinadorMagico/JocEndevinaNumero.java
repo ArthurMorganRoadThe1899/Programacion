@@ -2,9 +2,11 @@ package Programacion.Java.AdvinadorMagico;
 
 public class JocEndevinaNumero extends Joc {
 
+    public JocEndevinaNumero(int vidas) {
+        super(vidas);
+    }
 
-    @Override
-    public void jugar(){
+    public static void jugar(){
         System.out.println("pruebapruebaprueba");
     }
 }
