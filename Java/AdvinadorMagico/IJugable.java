@@ -1,8 +1,7 @@
 package Programacion.Java.AdvinadorMagico;
 
 public interface IJugable {
-
-    static void jugar(){}
+    public void jugar();
 
     static String mostrarNombre(){
         return null;

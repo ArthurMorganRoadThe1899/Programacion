@@ -2,7 +2,7 @@ package Programacion.Java.AdvinadorMagico;
 import java.util.Scanner;
 public abstract class Joc {
 
-    private static int vidas;
+    public static int vidas;
     private final int record = 0;
 
     public Joc(int vidas){
@@ -15,11 +15,6 @@ public abstract class Joc {
     public static String mostrarVidasRestantes(){
         return "Vidas: "+vidas;
     }
-
-    ///////////////////////
-    // INICIAR EL JUEGO //
-    ///////////////////// -> Método vacío que los hijos rescribiran a su gusto
-    public static void jugar(){}
 
     ////////////////////////////////
     // QUITARLE VIDAS AL JUGADOR //
@@ -35,7 +30,7 @@ public abstract class Joc {
     //////////////////////////////////////////////////////
     // REINICIAR LA PARTIDA CUANDO TE QUEDAS SIN VIDAS //
     ////////////////////////////////////////////////////
-    public static void reiniciarPartida(){
+    public static boolean reiniciarPartida(){
         Scanner in = new Scanner(System.in);
         boolean puedePasar;
         char respuesta = 0;
@@ -58,8 +53,15 @@ public abstract class Joc {
 
         }while(!puedePasar);
 
-        if(respuesta == 'S' || respuesta =='s'){
-            jugar();
+        boolean seguirOno = false;
+
+        switch (respuesta){
+            case 'S':
+                seguirOno = true;
+            case 'N':
+                seguirOno = false;
+
         }
+        return seguirOno;
     }
 }
