@@ -14,21 +14,25 @@ public class JocEndevinaNumero extends Joc implements IJugable {
     public void jugar() {
         Scanner in = new Scanner(System.in);
         vidas = 5;
-        int numeroMagico = 2;
+        boolean jugadorNoPasa = true;
+        int numeroMagico = (int) (Math.random() * (11 - 1) + 1);
 
         System.out.println(mostrarNombre() + descripcion() + "Muy bien hijo, ¿qué número crees que he maquinao'?");
 
-        int respuestaJugador = in.nextInt();
+        // Juego de adivinar el numero
+        do {
+            int respuestaJugador = in.nextInt();
 
-        if(respuestaJugador == numeroMagico){
-            System.out.println("Ganaste");
-        }else if(respuestaJugador != numeroMagico){
-            quitarVida();
-            // SOUT DE ABAJO DE PRUEBA
-            System.out.println(vidas);
-        }else if(vidas == 0){
-            reiniciarPartida();
-        }
+            if (respuestaJugador == numeroMagico) {
+                System.out.println("Ganaste");
+            } else if (respuestaJugador != numeroMagico) {
+                quitarVida();
+                jugadorNoPasa = false;
+            } else if (vidas == 0) {
+                reiniciarPartida();
+            }
+
+        }while(!jugadorNoPasa);
     }
 
     @Override
