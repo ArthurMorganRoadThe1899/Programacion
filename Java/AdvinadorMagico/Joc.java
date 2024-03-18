@@ -2,8 +2,8 @@ package Programacion.Java.AdvinadorMagico;
 import java.util.Scanner;
 public abstract class Joc {
 
-    public static int vidas;
-    private final int record = 0;
+    public int vidas;
+    private int record = 0;
 
     public Joc(int vidas){
         this.vidas = vidas;
@@ -12,20 +12,12 @@ public abstract class Joc {
     /////////////////////////////////////////
     // MOSTRAR VIDAS RESTANTES AL JUGADOR //
     ///////////////////////////////////////
-    public static String mostrarVidasRestantes(){
-        return "Vidas: "+vidas;
-    }
+    public abstract String mostrarVidasRestantes();
 
     ////////////////////////////////
     // QUITARLE VIDAS AL JUGADOR //
     //////////////////////////////
-    public static void quitarVida(){
-        vidas = vidas - 1;
-
-        if(vidas == 0){
-            System.out.println("não, o jogo acabou");
-        }
-    }
+    public abstract int quitarVida();
 
     //////////////////////////////////////////////////////
     // REINICIAR LA PARTIDA CUANDO TE QUEDAS SIN VIDAS //
@@ -58,9 +50,10 @@ public abstract class Joc {
         switch (respuesta){
             case 'S':
                 seguirOno = true;
-            case 'N':
-                seguirOno = false;
-
+                break;
+            case 's':
+                seguirOno = true;
+                break;
         }
         return seguirOno;
     }

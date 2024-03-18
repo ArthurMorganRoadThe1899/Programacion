@@ -38,7 +38,7 @@ public class Aplicacio {
 
                 switch (respuesta) {
                     case 1:
-                        JocEndevinaNumero juegico = new JocEndevinaNumero(5);
+                        JocEndevinaNumero juegico = new JocEndevinaNumero(0);
                         juegico.jugar();
                         jugoAunJuego = true;
                         break;
