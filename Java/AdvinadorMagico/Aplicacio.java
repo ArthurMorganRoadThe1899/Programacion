@@ -43,7 +43,10 @@ public class Aplicacio {
                         jugoAunJuego = true;
                         break;
 
-                    //case 2:
+                    case 2:
+                        JocEndevinaParell juegico2 = new JocEndevinaParell(0);
+                        juegico2.jugar();
+                        jugoAunJuego = true;
 
                     //case 3:
 

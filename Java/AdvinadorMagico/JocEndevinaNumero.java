@@ -35,6 +35,7 @@ public class JocEndevinaNumero extends Joc implements IJugable {
         return "\n[ES UN JUEGO DE ADIVINACIÓN, TIENES QUE ADIVINAR UN NÚMERO DEL 0 AL 10]\n";
     }
 
+    // Arreglar código, es muy poco readeable a ojo humano
     @Override
     public void jugar() {
         boolean reintentar = false;
@@ -45,7 +46,8 @@ public class JocEndevinaNumero extends Joc implements IJugable {
         boolean error = false;
         vidas = 5;
         int numeroMagico = (int) (Math.random() * (11) + 0);
-        System.out.println(mostrarNombre() + descripcion() + "Muy bien hijo, ¿qué número crees que he maquinao'?");
+
+        System.out.println(STR."\{mostrarNombre()}\{descripcion()}Muy bien hijo, ¿qué número crees que he maquinao'?");
 
         // JUEGO DE ADIVINAR EL NÚMERO
         do {
@@ -60,16 +62,19 @@ public class JocEndevinaNumero extends Joc implements IJugable {
                     error = true;
                 }
                 if(respuestaJugador > 10 || respuestaJugador < 0 || error){
-                    System.out.println("Dato introducido invalido o rango invalido [1-10]");
+                    System.out.println("Dato introducido invalido o rango invalido [0-10]");
                 }
             }while(respuestaJugador > 10 || respuestaJugador < 0 || error);
 
             // CONDICIÓN DE VICTORIA Y DE PERDER VIDAS
             if (respuestaJugador == numeroMagico) {
-                System.out.println("\n////////////////////////////////\n" +
-                                   "/////////// VICTORIA //////////\n" +
-                                   "////////////////////////////////\n");
+                System.out.println("""
+                        \n////////////////////////////////
+                        /////////// VICTORIA //////////
+                        ////////////////////////////////
+                        """);
                 jugadorPasa = true;
+                reintentar = false;
             } else {
                 quitarVida();
             }
