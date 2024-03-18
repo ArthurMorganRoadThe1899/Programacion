@@ -23,7 +23,7 @@ public class JocEndevinaParell extends Joc implements IJugable {
 
     @Override
     public String descripcion() {
-        return "\n[ES UN JUEGO DE ADIVINACIÓN, TIENES QUE ADIVINAR UN NÚMERO PA  ENTRE EL 0 Y EL 20]\n";
+        return "\n[ES UN JUEGO DE ADIVINACIÓN, TIENES QUE ADIVINAR UN NÚMERO PAR ENTRE EL 0 Y EL 20]\n";
     }
 
     @Override
@@ -64,16 +64,16 @@ public class JocEndevinaParell extends Joc implements IJugable {
                     }
 
                     // Remover está basura y tratar de hacer bien el que detecte los pares e impares
-                    if (numeroMagico % 2 == 0)
+                    if (respuestaJugador % 2 == 0) {
                         par = true;
-                    else{
+                    } else {
                         par = false;
                     }
 
-                    if(respuestaJugador > 20 || respuestaJugador < 0 && !par || error){
+                    if(respuestaJugador > 20 || respuestaJugador < 0 || !par || error){
                         System.out.println("Dato introducido invalido, impar o rango invalido [0-20]");
                     }
-                }while(respuestaJugador > 10 || respuestaJugador < 0 && !par || error);
+                }while(respuestaJugador > 20 || respuestaJugador < 0 || !par || error);
 
                 // CONDICIÓN DE VICTORIA Y DE PERDER VIDAS
                 if (respuestaJugador == numeroMagico) {

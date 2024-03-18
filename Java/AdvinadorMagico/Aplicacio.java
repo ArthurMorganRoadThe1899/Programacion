@@ -47,9 +47,13 @@ public class Aplicacio {
                         JocEndevinaParell juegico2 = new JocEndevinaParell(0);
                         juegico2.jugar();
                         jugoAunJuego = true;
+                        break;
 
-                    //case 3:
-
+                    case 3:
+                        JocEndevinaImparell juegico3 = new JocEndevinaImparell(0);
+                        juegico3.jugar();
+                        jugoAunJuego = true;
+                        break;
                     case 4:
                         System.out.println("Desconectando...");
                         break;
