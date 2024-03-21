@@ -5,7 +5,10 @@ import static java.lang.Integer.parseInt;
 
 public class JocEndevinaNumero extends Joc implements IJugable {
 
-    protected int vidas;
+    // VARIABLES ESTÁTICAS PARA TODO EL PROGRAMA
+    static int respuestaJugador = 0;
+    static boolean error = false;
+    static Scanner in = new Scanner(System.in);
 
     public JocEndevinaNumero(int vidas) {
         super(vidas);
@@ -35,17 +38,35 @@ public class JocEndevinaNumero extends Joc implements IJugable {
         return "\n[ES UN JUEGO DE ADIVINACIÓN, TIENES QUE ADIVINAR UN NÚMERO DEL 0 AL 10]\n";
     }
 
+    public static void pedirEntreUnRangoDeNumerosAlJugador(){
+        do {
+            try {
+                error = false;
+                respuestaJugador = parseInt(in.nextLine());
+            }catch(Exception e){
+                error = true;
+            }
+            if(respuestaJugador > 10 || respuestaJugador < 0 || error){
+                System.out.println("Dato introducido invalido o rango invalido [0-10]");
+            }
+        }while(respuestaJugador > 10 || respuestaJugador < 0 || error);
+    }
+
+    public static void GanarOperderVidas(){
+
+    }
+
     // Arreglar código, es muy poco readeable a ojo humano
     @Override
     public void jugar() {
         boolean reintentar = false;
-        int respuestaJugador = 0;
-    do {
-        Scanner in = new Scanner(System.in);
         boolean jugadorPasa = false;
-        boolean error = false;
+
+    do {
+        // Aquí defino
         vidas = 5;
         int numeroMagico = (int) (Math.random() * (11) + 0);
+        System.out.println(numeroMagico);
 
         System.out.println(STR."\{mostrarNombre()}\{descripcion()}Muy bien hijo, ¿qué número crees que he maquinao'?");
 
@@ -53,18 +74,7 @@ public class JocEndevinaNumero extends Joc implements IJugable {
         do {
             System.out.println(mostrarVidasRestantes());
 
-            // PREGUNTARLE AL USUARIO QUE NÚMERO CREE QUE HA SALIDO
-            do {
-                try {
-                    error = false;
-                    respuestaJugador = parseInt(in.nextLine());
-                }catch(Exception e){
-                    error = true;
-                }
-                if(respuestaJugador > 10 || respuestaJugador < 0 || error){
-                    System.out.println("Dato introducido invalido o rango invalido [0-10]");
-                }
-            }while(respuestaJugador > 10 || respuestaJugador < 0 || error);
+            pedirEntreUnRangoDeNumerosAlJugador();
 
             // CONDICIÓN DE VICTORIA Y DE PERDER VIDAS
             if (respuestaJugador == numeroMagico) {
