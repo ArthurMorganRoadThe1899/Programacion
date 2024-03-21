@@ -7,7 +7,7 @@ public class JocEndevinaNumero extends Joc implements IJugable {
 
     // VARIABLES ESTÁTICAS PARA TODO EL PROGRAMA
     static int respuestaJugador = 0;
-    static boolean error = false;
+
     static Scanner in = new Scanner(System.in);
 
     public JocEndevinaNumero(int vidas) {
@@ -15,16 +15,19 @@ public class JocEndevinaNumero extends Joc implements IJugable {
         this.vidas = vidas;
     }
 
+
     @Override
     public String mostrarVidasRestantes() {
         return STR."\n[VIDAS RESTANTES: \{vidas}]";
 
     }
 
+
     @Override
     public int quitarVida() {
         return vidas = vidas - 1;
     }
+
 
     @Override
     public String mostrarNombre() {
@@ -33,12 +36,17 @@ public class JocEndevinaNumero extends Joc implements IJugable {
                 "/=============================================/";
     }
 
+
     @Override
     public String descripcion(){
         return "\n[ES UN JUEGO DE ADIVINACIÓN, TIENES QUE ADIVINAR UN NÚMERO DEL 0 AL 10]\n";
     }
 
+
     public static void pedirEntreUnRangoDeNumerosAlJugador(){
+
+        boolean error = false;
+
         do {
             try {
                 error = false;
@@ -52,20 +60,15 @@ public class JocEndevinaNumero extends Joc implements IJugable {
         }while(respuestaJugador > 10 || respuestaJugador < 0 || error);
     }
 
-    public static void GanarOperderVidas(){
 
-    }
-
-    // Arreglar código, es muy poco readeable a ojo humano
     @Override
     public void jugar() {
         boolean reintentar = false;
         boolean jugadorPasa = false;
 
     do {
-        // Aquí defino
         vidas = 5;
-        int numeroMagico = (int) (Math.random() * (11) + 0);
+        int numeroMagico = (int) (Math.random() * (11) + 0); // NÚMERO ENTRE 0 Y 10
         System.out.println(numeroMagico);
 
         System.out.println(STR."\{mostrarNombre()}\{descripcion()}Muy bien hijo, ¿qué número crees que he maquinao'?");
@@ -98,7 +101,7 @@ public class JocEndevinaNumero extends Joc implements IJugable {
 
         // PREGUNTARLE AL USUARIO SI QUIERE REINICIAR
         if (vidas == 0) {
-            reintentar = reiniciarPartida();
+            reintentar = reiniciarPartida(); // reiniciarPartida es un método que te, te devuelve un booleano true o false según el character
         }
     }while(reintentar);
     }
