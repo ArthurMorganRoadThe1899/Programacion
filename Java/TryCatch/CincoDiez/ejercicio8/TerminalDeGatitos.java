@@ -6,9 +6,11 @@ public class TerminalDeGatitos {
         Scanner in = new Scanner(System.in);
 
         Gato gato1 = new Gato();
-        System.out.println("Hola neno, dime\n¿si tuvieses un gato como lo llamarías?");
 
+        System.out.println("Hola neno, dime\n¿si tuvieses un gato como lo llamarías?");
         String nombre = in.next();
+
+        System.out.println("¿Con que edad te lo imaginas?");
         int edad = in.nextInt();
 
         gato1.setName(nombre);

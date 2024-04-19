@@ -7,20 +7,35 @@ public class TerminalDeGatitos {
     public static void main(String[] args) {
         ArrayList<Gato> gatoLista = new ArrayList<Gato>();
         Scanner in = new Scanner(System.in);
-        String nombre;
-        int edad = 0;
+        int count = 0;
 
-        for (int i = 0; i < 2; i++){
+        // Ciclo para añadir gatos al arraylist //
+        for (int i = 0; i < 5; i++) {
+            Gato gatoConcept = new Gato();
             System.out.println("Hola neno, dime\n¿si tuvieses un gato como lo llamarías?");
-            nombre = in.next();
+            String nombre = in.next();
 
             System.out.println("¿Con que edad te lo imaginas?");
-                edad = in.nextInt();
+            int edad = in.nextInt();
 
-            gatoLista.add(new Gato(nombre, edad));
+            gatoConcept.setName(nombre);
 
+            try {
+                gatoConcept.setEdad(edad);
+            } catch (NumberFormatException asd) {
+                System.out.println(asd.getMessage());
+            }
+
+            gatoLista.add(gatoConcept);
+
+            // Esto es una tontería que quise meter XD //
+            count = count + 1;
+            if(count < 5){
+                System.out.println("Again...\n");
+            }
         }
 
+        // Mostrar los nombres de todos los gaticos añadidos //
         for (int i = 0; i < gatoLista.size(); i++){
             System.out.println(gatoLista.get(i).toString() + "\n");
         }
