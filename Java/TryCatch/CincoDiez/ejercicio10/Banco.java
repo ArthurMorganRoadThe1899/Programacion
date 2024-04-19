@@ -1,4 +1,4 @@
-package Programacion.Java.TryCatch.CasoPractico;
+package Programacion.Java.TryCatch.CincoDiez.ejercicio10;
 import java.util.Scanner;
 
 public class Banco {
@@ -6,10 +6,10 @@ public class Banco {
         Scanner in = new Scanner(System.in);
 
         Cliente cliente1 = new Cliente(5000, 0);
-        System.out.println("============================" +
-                "==== 1. EXTRAER DINERO =====" +
-                "==== 2. DEPOSITAR DINERO ===" +
-                "==== 3. SALIR ==============" +
+        System.out.println("============================\n" +
+                "==== 1. EXTRAER DINERO =====\n" +
+                "==== 2. DEPOSITAR DINERO ===\n" +
+                "==== 3. SALIR ==============\n" +
                 "============================");
 
         int respuesta = in.nextInt();
