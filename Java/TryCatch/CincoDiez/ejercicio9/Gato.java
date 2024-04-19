@@ -1,8 +1,15 @@
-package Programacion.Java.TryCatch.CincoDiez.ejercicio8;
+package Programacion.Java.TryCatch.CincoDiez.ejercicio9;
 
 public class Gato {
     public String nombre;
     public int edad;
+
+    // DATOS PUBLICOS //
+
+    public Gato(String nombre, int edad){
+        this.nombre = nombre;
+        this.edad = edad;
+    }
 
     // GETTERS Y SETTER DE NOMBRE Y EDAD DEL GATO //
     public String getName(){

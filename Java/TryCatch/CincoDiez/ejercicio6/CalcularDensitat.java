@@ -1,4 +1,4 @@
-package Programacion.Java.TryCatch;
+package Programacion.Java.TryCatch.CincoDiez.ejercicio6;
 import java.util.Scanner;
 
 public class CalcularDensitat {
