@@ -62,5 +62,5 @@ public class Banco {
 }
 
         /* * AÑADIR SIGUIENTES DATOS:
-            ! Movimientos
+            ! Trycatch para evitar errores de transacciones
         */
