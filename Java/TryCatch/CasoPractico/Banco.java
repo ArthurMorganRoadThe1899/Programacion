@@ -1,5 +1,4 @@
 package Programacion.Java.TryCatch.CasoPractico;
-import Programacion.Java.TryCatch.CincoDiez.ejercicio9.Gato;
 
 import java.util.ArrayList;
 import java.util.Scanner;
