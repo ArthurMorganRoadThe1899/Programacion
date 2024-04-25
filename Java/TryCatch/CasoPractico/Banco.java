@@ -23,7 +23,7 @@ public class Banco {
                 "==== 5. DEPOSITAR DINERO ===\n" +
                 "==== 6. SALDO ==============\n" +
                 "==== 7. MOVIMIENTOS ========\n" +
-                "==== 7. SALIR ==============\n" +
+                "==== 8. SALIR ==============\n" +
                 "============================");
 
         respuesta = in.nextInt();
