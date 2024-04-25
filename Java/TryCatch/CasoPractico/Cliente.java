@@ -8,7 +8,6 @@ import java.util.Random;
 public class Cliente {
     static Scanner in = new Scanner(System.in);
     ArrayList<String> movimientos = new ArrayList<String>();
-    String fechaActual = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     public String IBAM;
     public String Nombre;
     public int dinero;
@@ -37,6 +36,7 @@ public class Cliente {
     // MÉTODO DE EXTRACCIÓN DE DINERO //
     public void extraccion(){
         System.out.println("¿Cuanto dinero quieres extraer?");
+
         do {
             try {
                 accion = in.nextInt();
@@ -46,6 +46,7 @@ public class Cliente {
             }
         }while(accion > dinero);
 
+        String fechaActual = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         dinero = dinero - accion;
 
         System.out.println("Has extraido " + accion + "€, te quedan " + dinero + "€");
@@ -59,6 +60,8 @@ public class Cliente {
     public void depositar(){
         System.out.println("¿Cuanto dinero quieres depositar?");
         accion = in.nextInt();
+
+        String fechaActual = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         dinero = dinero + accion;
 
         System.out.println("Has introducido " + accion + "€, ahora tienes " + dinero + "€");
@@ -121,7 +124,7 @@ public class Cliente {
     // MOVIMIENTOS //
     public void Movimientos(){
         for(int i = 0; i < movimientos.size(); i++){
-            System.out.printf("| " + movimientos.get(i) + " |");
+            System.out.printf("| " + movimientos.get(i) + " |\n");
         }
     }
 

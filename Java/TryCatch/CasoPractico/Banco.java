@@ -12,7 +12,6 @@ public class Banco {
         Cliente cliente1 = new Cliente(5000, 0);
         cliente1.generateUserIBAM(new StringBuilder("i"));
         cliente1.setNombre("i");
-        System.out.println(cliente1.getNombre());
 
         do {
         System.out.println("\n============================\n" +
