@@ -3,7 +3,7 @@ import java.io.File;
 
 public class ReadFile5 {
     public static void main(String[] args) {
-
+/*
         // Instaciem a la classe FILE amb les rutes relatives a les carpetes que volem esborrar
         File fotografies = new File("Documentos/Fotografias");
         File libros = new File("Documentos/Libros");
@@ -32,7 +32,7 @@ public class ReadFile5 {
 
         } catch (FileNotFoundException e) {
             System.out.println(e);
-        }
+        }*/
     }
 }
 
