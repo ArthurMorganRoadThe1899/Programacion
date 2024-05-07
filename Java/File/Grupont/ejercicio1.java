@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.io.IOException;
 
-public class Judgament {
+public class ejercicio1 {
 
     public static void main(String[] args) throws IOException {
         String oracion1 = "";
@@ -39,14 +39,14 @@ public class Judgament {
     }
 
 
-    // SCANNER, SE USA PORQUE ES VISTOSO//
+    // SCANNER, SE USA PORQUE ES VISTOSO //
     public static String input() {
         Scanner in = new Scanner(System.in);
         return in.nextLine();
     }
 
 
-    // MÉTODO PARA COMPROBAR SI UN DATO ESTA VACÍO//
+    // MÉTODO PARA COMPROBAR SI UN DATO ESTA VACÍO //
     public static void checkIfIsEmpty(String p) {
         if (Objects.equals(p, "")) {
             System.out.println("Tu oración esta vacía, pon algo por favor");
@@ -71,7 +71,7 @@ public class Judgament {
 
     }
 
-    // Writer //
+    // MÉTODO PARA ESCRIBIR EN UN ARCHIVO //
     public static void writeFileTwoSentences(File p, String f){
         try {
             FileWriter esc = new FileWriter(p);
