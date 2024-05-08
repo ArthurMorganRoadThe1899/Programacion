@@ -1,0 +1,2 @@
+lun  mar  mie  jue  vie
+ 1    1    1    1    1
