@@ -74,7 +74,7 @@
         // MÉTODO PARA ESCRIBIR EN UN ARCHIVO //
         public static void writeFileTwoSentences(File p, String f){
             try {
-                FileWriter esc = new FileWriter(p);
+                FileWriter esc = new FileWriter(p, true);
                 esc.write(f);
                 esc.close();
                 System.out.println("Se ha añadido el contenido al archivo.");

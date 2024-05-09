@@ -198,7 +198,7 @@ public class ejercicio5 {
         try {
             FileWriter esc = new FileWriter(p,true);
             BufferedWriter bufbuf = new BufferedWriter(esc);
-            bufbuf.write(month + "\n\n");
+            bufbuf.write(month + "\n");
             bufbuf.newLine();
             bufbuf.write("lun  mar  míe  jue  vie  sáb  dom");
             bufbuf.newLine();
