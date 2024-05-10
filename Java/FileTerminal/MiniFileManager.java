@@ -1,11 +1,26 @@
 package Programacion.Java.FileTerminal;
+import java.util.Scanner;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class MiniFileManager {
-    Path currRelativePath = Paths.get("");
-    String currAbsolutePathString = currRelativePath.toAbsolutePath().toString();
-    String home = System.getProperty("user.home");
+    String getPWD(){
+
+        return  "a";
+    }
+    boolean changeDir(String dir){
+
+     return true;
+    }
+
+    void printList(boolean info){
+
+    }
+
+    public static String input() {
+        Scanner in = new Scanner(System.in);
+        return in.nextLine();
+    }
 
 }
 
