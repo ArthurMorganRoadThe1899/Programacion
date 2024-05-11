@@ -1,73 +1,66 @@
 package Programacion.Java.FileTerminal;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class MiniFileManager {
-
-    public static void main(String[] args) {
-        String response = "inicializada";
-        File ruta = new File("src/");
-
-        String[] datosResponseSpace;
-        String[] datosResponseBackslash;
-
-        do{
-            response = input();
-
-            datosResponseSpace = response.split("\s");
-            datosResponseBackslash = response.split("/");
-
-            switch (datosResponseSpace[0]) {
-                case "pwd":
-                    System.out.println(ruta);
-
-                    break;
-                case "mv":
-                    File mv1 = new File(datosResponseSpace[1]);
-                    File mv2 = new File(datosResponseSpace[2]);
-
-                    //System.out.println(datosResponseSpace[1]);
-                    //System.out.println(datosResponseSpace[2]);
-
-                    System.out.println("\n");
-
-                    for(int i = 0; i < datosResponseBackslash.length; i++){
-                        System.out.println(datosResponseBackslash[i]);
-                    }
-                    break;
-            }
-
-
-        }while(!response.equals("exit"));
-    }
-
-
 
     public static String input() {
         Scanner in = new Scanner(System.in);
         return in.nextLine();
     }
 
-
-
-
-    public static String getPWD(){
-
-        return  "a";
-    }
-
-
-
     public static boolean changeDir(String dir){
 
      return true;
     }
 
+
+    // CREAR DIRECTORIOS //
+    /*public static File createDirectory(File ruta, String[] directories){
+        File dir = new File(directoryPath);
+        if (dir.exists()) {
+            return dir;
+        }
+        if (dir.mkdirs()) {
+            return dir;
+        }
+        throw new IOException("Failed to create directory '" + dir.getAbsolutePath() + "' for an unknown reason.");
+    }*/
+
+
+    // MÉTODO PARA QUE CUANDO LE PASAS PARÁMETROS AL COMANDO LS, TE DEVUELVA LOS ARCHIVOS QUE TE PASE Y TE LISTE EL CONTENIDO DE LOS ARCHIVOS QUE LE PASE //
+    // ! HAY QUE ARREGLAR ESTE CÓDIGO PORQUE FALLA LA IMPRESIÓN ! //
+    public static void lOut(String[] spaceDatainfo, File ruta, String tipoLs) throws FileNotFoundException {
+        File[] lista = new File[spaceDatainfo.length-1];
+
+        for(int i = 1; i < spaceDatainfo.length; i++){
+            File f = new File(ruta + spaceDatainfo[i]);
+            if(f.exists()){
+                lista = f.listFiles();
+            }
+        }
+
+
+
+        for (int i = 0; i < lista.length; i++) {
+            boolean infoExtra = !Objects.equals(tipoLs, "ls");
+
+            // MOSTRAR DIRECTORIOS Y ARCHIVOS //
+            if (lista[i].isDirectory()) {
+                printList(lista[i], infoExtra);
+            }
+
+            if (lista[i].isFile())
+                if (infoExtra)
+                    System.out.println("[A] " + lista[i].getName() + "\t" + lista[i].length() + " bytes\t" + new Date(lista[i].lastModified()));
+                else
+                    System.out.println("[A] " + lista[i].getName());
+
+        }
+    }
 
 
     // MÉTODO PARA MOSTRAR RUTAS //
@@ -80,10 +73,6 @@ public class MiniFileManager {
         // LANZAR ERROR EN CASO DE QUE NO EXISTA EL ARCHIVO //
         if (!f.exists())
             throw new FileNotFoundException("ERROR - Ruta no existe ");
-
-        // MOSTRAR ARCHIVO SI LA RUTA ES UN ARCHIVO //
-        if(f.isFile())
-            System.out.println("El nombre del archivo es: " + f.getName());
 
             // SI LA RUTA ES UNA CARPETA, ABRA KADABRA ENSEÑA EL CONTENIDO //
         else if(f.isDirectory()) {
