@@ -40,7 +40,6 @@ public class MiniFileManager {
     // CREAR DIRECTORIOS //
     public static void createDirectory(File ruta, String[] directories) throws IOException {
         Path directoryPath = Paths.get(ruta.toURI());
-        System.out.println(directoryPath);
         File dir;
 
         for(int i = 1; i < directories.length; i++) {
