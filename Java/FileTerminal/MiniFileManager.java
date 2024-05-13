@@ -86,6 +86,35 @@ public class MiniFileManager {
     }
 
 
+    // HELP //
+    public static String help(){
+        String ANSI_RESET = "\u001B[0m";
+        String ANSI_GREEN = "\u001B[32m";
+        String GREEN_UNDERLINED = "\033[4;32m";
+        String NSI_YELLOW = "\u001B[33m";
+        String ANSI_CYAN = "\u001B[36m";
+
+        // Me imagino que no será la manera óptima, pero he decidido agarrar a través de strings lo de los colores para que sea
+        // mínimamente legible... XD
+        return  ANSI_GREEN+"============================================================\n" +
+                "===  Estos son los siguientes comandos disponibles       ===\n" +
+                "=== 1. "+NSI_YELLOW+"pwd"+ANSI_RESET+ANSI_GREEN+" - Muestra la ruta en la que estas actualmente ===\n" +
+                "= 2. "+NSI_YELLOW+"mv"+ANSI_RESET+ANSI_GREEN+" - Permite renombrar o mover archivos y directorios =\n" +
+                "===                "+ANSI_CYAN+"(mv 'origen destino')"+ANSI_RESET+ANSI_GREEN+"                 ===\n" +
+                "=== 3. "+NSI_YELLOW+"cd"+ANSI_RESET+ANSI_GREEN+" - Te permite moverte entre directorios:        ===\n" +
+                "===                     "+ANSI_CYAN+"(cd ruta)"+ANSI_RESET+ANSI_GREEN+"                        ===\n" +
+                "=== 4. "+NSI_YELLOW+"mkdir"+ANSI_RESET+ANSI_GREEN+" - Te permite crear directorios (has de fin- ===\n" +
+                "=== -alizar el este programa para que se creen)          ===\n" +
+                "===                 "+ANSI_CYAN+"(mkdir directorio)"+ANSI_RESET+ANSI_GREEN+"                   ===\n" +
+                "=== 5. "+NSI_YELLOW+"l"+ANSI_RESET+ANSI_GREEN+" - Este comando te permite listar repositorios   ===\n" +
+                "=== SOLO FUNCIONA ESTE COMANDO SI ESCRIBES "+GREEN_UNDERLINED+"'ll'"+ANSI_RESET+ANSI_GREEN+" o "+GREEN_UNDERLINED+"'ls'"+ANSI_RESET+ANSI_GREEN+":  ===\n" +
+                "===            "+ANSI_CYAN+"(ls | ll (directorios/archivos))"+ANSI_RESET+ANSI_GREEN+"          ===\n" +
+                "=== 6. "+NSI_YELLOW+"clear"+ANSI_RESET+ANSI_GREEN+" - Limpias la terminal                       ===\n" +
+                "=== 7. "+NSI_YELLOW+"help"+ANSI_RESET+ANSI_GREEN+" - Lista de comandos disponibles              ===\n" +
+                "============================================================" + ANSI_RESET;
+    }
+
+
     // MÉTODO PARA QUE CUANDO LE PASAS PARÁMETROS AL COMANDO LS, TE DEVUELVA LOS ARCHIVOS QUE TE PASE Y TE LISTE EL CONTENIDO DE LOS ARCHIVOS QUE LE PASE //
     public static void lOut(String[] spaceDatainfo, File ruta, String tipoLs) throws FileNotFoundException {
         ArrayList<File> lista = new ArrayList<>();

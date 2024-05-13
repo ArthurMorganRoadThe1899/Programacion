@@ -72,6 +72,9 @@ public class MiniTerminal {
                 // SALIR DEL BUCLE DE TERMINAL //
                 case "exit":
                     break;
+                case "help":
+                    System.out.println(MiniFileManager.help());
+                    break;
                 default:
                     System.out.println(response +": comando no encontrado");
                     break;
