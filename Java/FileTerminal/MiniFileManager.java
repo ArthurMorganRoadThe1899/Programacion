@@ -2,11 +2,8 @@ package Programacion.Java.FileTerminal;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
+import java.nio.file.*;
 import java.util.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class MiniFileManager {
 
@@ -65,11 +62,16 @@ public class MiniFileManager {
         boolean sanMovioOcambiaoDeName = true;
 
             try {
-                Path source = Path.of(ruta + "/" + whatYouMoving[whatYouMoving.length-1]);
+                File target = new File(ruta + "/" + whatYouMoving[whatYouMoving.length-1]);
                 for(int i = 1; i <= whatYouMoving.length-1; i++){
-                    Path getWhatYouWantToMove = Path.of(ruta + "/" + whatYouMoving[i]);
+                    File source = new File(ruta + "/" + whatYouMoving[i]);
                     try {
-                        Files.move(getWhatYouWantToMove, source );
+                        if(target.isFile()){
+                            Files.move(source.toPath(), target.toPath());
+                        }else{
+                            source.renameTo(new File(target + "/" + whatYouMoving[i]));
+                        }
+
                     }catch (Exception e){
                         sanMovioOcambiaoDeName = false;
                         e.printStackTrace();
@@ -86,7 +88,6 @@ public class MiniFileManager {
 
     // MÉTODO PARA QUE CUANDO LE PASAS PARÁMETROS AL COMANDO LS, TE DEVUELVA LOS ARCHIVOS QUE TE PASE Y TE LISTE EL CONTENIDO DE LOS ARCHIVOS QUE LE PASE //
     public static void lOut(String[] spaceDatainfo, File ruta, String tipoLs) throws FileNotFoundException {
-        //File[] lista = new File[spaceDatainfo.length-1];
         ArrayList<File> lista = new ArrayList<>();
 
         for(int i = 1; i < spaceDatainfo.length; i++){

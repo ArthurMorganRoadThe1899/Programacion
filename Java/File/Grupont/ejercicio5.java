@@ -183,7 +183,6 @@ public class ejercicio5 {
 
     // MÉTODO PARA ESCRIBIR EN UN ARCHIVO //
     public static void write(File p, String month, String startingMonthDay, int numberMonthDays){
-        int exactDay = 2;
         int dayUpgrader = switch (startingMonthDay) {
             case "lunes" -> 1;
             case "martes" -> 2;
@@ -194,6 +193,8 @@ public class ejercicio5 {
             case "domingo" -> 0;
             default -> 0;
         };
+
+        System.out.println(dayUpgrader);
 
         try {
             FileWriter esc = new FileWriter(p,true);
@@ -224,6 +225,7 @@ public class ejercicio5 {
                     bufbuf.write("                    " + 1);
                     break;
                     // ! hay un problema con este y cada vez que le dices al programa de iniciar el domingo no empieza bien
+                    // ! Esto se debe a que a la que empieza el loop weekDaySelector(dayUpgrader) es igual a lunes
                 case "domingo":
                     bufbuf.write("                        " + 1);
                     break;
