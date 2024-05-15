@@ -26,6 +26,7 @@ public class ex4 {
 
         System.out.println("¿Quieres guardarlo en usa_personas.txt o en random_generated_name.txt\n1. usa_personas.txt | 2. random_generated_name.txt");
         int whereISaveIt;
+        System.out.println("holi");
 
 
     }
@@ -37,13 +38,18 @@ public class ex4 {
 
     // MÉTODO TRY-CATCH PARA PEDIR NÚMEROS AL USUARIO
     public static int getUserDataNumber(int i){
+        boolean pass;
         // Try catch en el que guardamos el valor
-        try{
-            i = giveMeButPleaseNotNegative();
-        }catch(InputMismatchException e){
-            notNumber();
-            System.out.println(e.getMessage());
-        }
+        do {
+            try {
+                pass = true;
+                i = giveMeButPleaseNotNegative();
+            } catch (InputMismatchException e) {
+                notNumber();
+                System.out.println(e.getMessage());
+                pass = false;
+            }
+        }while(!pass);
 
         return i;
     }
