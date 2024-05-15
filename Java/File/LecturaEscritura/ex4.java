@@ -24,10 +24,10 @@ public class ex4 {
         numberOfNames = getUserDataNumber(numberOfNames);
 
 
-        System.out.println("¿Quieres guardarlo en usa_personas.txt o en random_generated_name.txt\n1. usa_personas.txt | 2. random_generated_name.txt");
+        System.out.println("¿Quieres guardarlo en \u001B[36musa_personas.txt o en \u001B[36mrandom_generated_name.txt\n1. usa_personas.txt | 2. random_generated_name.txt");
         int whereISaveIt;
-        System.out.println("holi");
 
+        System.out.println("holi");
 
     }
 
@@ -74,8 +74,6 @@ public class ex4 {
 
         if(i < 0){
             message ="Porfavor, no pongas datos negativos";
-        }else{
-            message = "Dato introducido correcto";
         }
 
         return message;
