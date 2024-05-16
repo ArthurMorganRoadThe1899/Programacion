@@ -6,6 +6,7 @@ public class ex1 {
     public static void main(String[] args) throws IOException {
         // Defino esta variable que usaré para ver CUÁL es el mayor valor
         int maxValue = 0;
+        int minValue = maxValue;
         // Defino la ruta de numeros.txt
         File ruta = new File("src/Programacion/Java/File/LecturaEscritura/Documentos/numeros.txt");
 
@@ -13,6 +14,7 @@ public class ex1 {
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             // Variable donde almaceno cada línea que leo
             String line;
+            br.mark(23232323);
 
             // Bucle en el que leo línea por línea cada número
             while ((line = br.readLine()) != null) {
@@ -23,11 +25,16 @@ public class ex1 {
                 if(lineToInt > maxValue){
                     maxValue = lineToInt;
                 }
+
+                if(lineToInt < maxValue){
+                    minValue = lineToInt;
+                }
             }
+
         }
 
         // Le decimos al usuario cuál es el mayor número de numeros.txt
-        System.out.println("El máximo valor encontrado en la ruta:\n"+ruta+"\n\nEs: "+maxValue);
+        System.out.println("El máximo valor encontrado en la ruta:\n"+ruta+"\n\nEs mayor valor es : "+maxValue + "\nEl menor valor es: " + minValue);
 
     }
 }
