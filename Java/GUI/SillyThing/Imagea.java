@@ -1,4 +1,4 @@
-package Programacion.Java.GUI;
+package Programacion.Java.GUI.SillyThing;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
