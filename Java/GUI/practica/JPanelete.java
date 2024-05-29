@@ -19,7 +19,6 @@ public class JPanelete extends JFrame {
         panel.setBackground(Color.LIGHT_GRAY);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
         setResizable(false);
         setSize(700,600);
         setLocationRelativeTo(null);
@@ -77,11 +76,14 @@ public class JPanelete extends JFrame {
         email.setLocation(100, 200);
         add(email);
 
+
+        setVisible(true);
+
     }
 
 
     public static void main(String[] args) {
-        JPanelete j = new JPanelete();
+        JPanelete a = new JPanelete();
     }
 
 

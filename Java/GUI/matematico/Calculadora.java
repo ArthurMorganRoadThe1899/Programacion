@@ -1,4 +1,16 @@
 package Programacion.Java.GUI.matematico;
 
-public class Calculadora {
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Calculadora extends JPanel implements ActionListener {
+    public Calculadora(){
+
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }
