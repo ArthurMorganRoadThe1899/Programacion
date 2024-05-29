@@ -76,7 +76,7 @@ public class JPanelete extends JFrame {
         email.setSize(100, 20);
         email.setLocation(100, 200);
         add(email);
-    
+
     }
 
 
