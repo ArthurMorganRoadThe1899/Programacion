@@ -44,7 +44,6 @@ public class Calculadora extends JFrame implements ActionListener {
         JButton BDIV = new JButton("/");
         JButton BMUL = new JButton("*");
         JButton BDEL = new JButton("C");
-        JButton BP = new JButton(".");
 
         B1.addActionListener(this);
         B2.addActionListener(this);
@@ -62,7 +61,6 @@ public class Calculadora extends JFrame implements ActionListener {
         BDIV.addActionListener(this);
         BMUL.addActionListener(this);
         BDEL.addActionListener(this);
-        BP.addActionListener(this);
 
         add(panel);
         add(B1);
@@ -81,7 +79,6 @@ public class Calculadora extends JFrame implements ActionListener {
         add(BDIV);
         add(BMUL);
         add(BDEL);
-        add(BP);
     }
 
     // Iniciar la GUI //
@@ -99,6 +96,7 @@ public class Calculadora extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String action = e.getActionCommand();
         String contentParser = "";
+        int resultado = 0;
 
             switch (action) {
                 default:
@@ -108,7 +106,10 @@ public class Calculadora extends JFrame implements ActionListener {
 
                     break;
                 case "=":
-
+                    contentParser = operacionInterna();
+                    try {
+                        resultado = SacarResultado(contentParser, resultado);
+                    } catch (InterruptedException ex){}
                     break;
                 case "C":
                     panelContent.removeAll(panelContent);
@@ -125,12 +126,61 @@ public class Calculadora extends JFrame implements ActionListener {
         for(int i = 0; i < panelContent.size(); i++){
             e = e+panelContent.get(i);
         }
-
         return e;
     }
 
     // Sacar resultado //
-    public void SacarResultado(){
-        
+    public static int SacarResultado(String operacionString, int resultado) throws InterruptedException {
+        String[] numeros = operacionString.split("[+\\-*/]");
+        String[] simbolosValue = operacionString.split("\\d+");
+
+        resultado = 0;
+
+        try {
+            // Envuelvo esto en un if-else para tener en cuenta el caso el que el usuario solo inserte numeros simples
+            if (numeros.length > 1) {
+                // Hago un switch inicial con el que evaluare la primera operación
+                switch (simbolosValue[1]) {
+                    case "+":
+                        resultado = resultado + Integer.parseInt(numeros[0]) + Integer.parseInt(numeros[1]);
+                        break;
+                    case "-":
+                        resultado = resultado + Integer.parseInt(numeros[0]) - Integer.parseInt(numeros[1]);
+                        break;
+                    case "*":
+                        resultado = resultado + Integer.parseInt(numeros[0]) * Integer.parseInt(numeros[1]);
+                        break;
+                    case "/":
+                        resultado = resultado + Integer.parseInt(numeros[0]) / Integer.parseInt(numeros[1]);
+                        break;
+                }
+                // Y luego iré haciendo el bucle el resto de operaciones consecuentes
+                for (int i = 2; i < simbolosValue.length; i++) {
+                    switch (simbolosValue[i]) {
+                        case "+":
+                            resultado = resultado + Integer.parseInt(numeros[i]);
+                            break;
+                        case "-":
+                            resultado = resultado - Integer.parseInt(numeros[i]);
+                            break;
+                        case "*":
+                            resultado = resultado * Integer.parseInt(numeros[i]);
+                            break;
+                        case "/":
+                            resultado = resultado / Integer.parseInt(numeros[i]);
+                            break;
+                    }
+                }
+                panel.setText(String.valueOf(resultado));
+            } else {
+                resultado = Integer.parseInt(numeros[0]);
+            }
+        }catch (ArithmeticException e){
+            // ! ARREGLAR, CUANDO INTENTO DIVIDIR DE 0 NO MUESTRA NINGÚN MENSAJE PERO EL THREAD SLEEP SE ACTIVA IGUALMENTE
+            panel.setText("CAN'T DIVIDE BETWEEN 0!");
+            //Thread.sleep(1000);
+            panel.setText(operacionString);
+        }
+        return resultado;
     }
 }
