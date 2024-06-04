@@ -151,6 +151,28 @@ public class Menu extends JFrame implements ActionListener {
         add(cerveza);
 
 
+        // OPCIONES EXTRA
+        // CAMPO DE LAS PAPITAS
+        JLabel opcionesExtra = new JLabel("Opciones extra / adicionales");
+        ButtonGroup opcionesExtraGroup = new ButtonGroup();
+        opcionesExtra.setBounds(20,250,250,30);
+        add(opcionesExtra);
+
+        JCheckBox hamburguesaDoble  = new JCheckBox("Hamburguesa Doble (+2€)");
+        hamburguesaDoble.setBounds(20,275,250,30);
+        hamburguesaDoble.setFont(new Font("Times new roman", Font.PLAIN, 13));
+        add(hamburguesaDoble);
+
+        JCheckBox extraQueso  = new JCheckBox("Hamburguesa de queso (+0,50€)");
+        extraQueso.setBounds(20,305,250,30);
+        extraQueso.setFont(new Font("Times new roman", Font.PLAIN, 13));
+        add(extraQueso);
+
+        JCheckBox extraPatatas  = new JCheckBox("Extra de patatas (+1€)");
+        extraPatatas.setBounds(20,335,250,30);
+        extraPatatas.setFont(new Font("Times new roman", Font.PLAIN, 13));
+        add(extraPatatas);
+
 
     }
 
